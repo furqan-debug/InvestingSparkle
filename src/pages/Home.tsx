@@ -121,7 +121,7 @@ const Home = () => {
                   className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8 py-6"
                   asChild
                 >
-                  <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/923181300262?text=Hi! I want to start my PSX journey. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Start Free Consultation
                   </a>
@@ -314,7 +314,7 @@ const Home = () => {
                 className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
                 asChild
               >
-                <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/923181300262?text=Hi! I'm ready to start my investment journey. Please provide me with a WhatsApp consultation." target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   WhatsApp Consultation
                 </a>

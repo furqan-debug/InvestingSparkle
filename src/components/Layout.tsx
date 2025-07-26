@@ -55,7 +55,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <a
-                  href="https://wa.me/923001234567"
+                  href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services. Can you help me get started with PSX investing?"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
@@ -97,7 +97,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                       className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     >
                       <a
-                        href="https://wa.me/923001234567"
+                        href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services. Can you help me get started with PSX investing?"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center space-x-2"
@@ -158,7 +158,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>WhatsApp: +92 300 1234567</li>
+                <li>WhatsApp: +92 318 1300262</li>
                 <li>Email: info@profitway.pk</li>
                 <li>Karachi, Pakistan</li>
               </ul>

@@ -228,7 +228,7 @@ const Services = () => {
                       className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
                       asChild
                     >
-                      <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                      <a href={`https://wa.me/923181300262?text=Hi! I'm interested in your "${service.title}" service. Price: ${service.price}. Can you provide me with more details?`} target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="mr-2 h-4 w-4" />
                         Get Started
                       </a>
@@ -282,7 +282,7 @@ const Services = () => {
                     variant={pkg.popular ? 'default' : 'outline'}
                     asChild
                   >
-                    <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/923181300262?text=Hi! I want to purchase the "${pkg.name}" package. Price: ${pkg.price}. Please provide me with the details to get started.`} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" />
                       Choose Package
                     </a>
@@ -311,7 +311,7 @@ const Services = () => {
                 className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
                 asChild
               >
-                <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/923181300262?text=Hi! I need help choosing the right service/package for my investment needs. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Free Consultation
                 </a>
