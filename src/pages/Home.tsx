@@ -99,72 +99,79 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-primary/5 via-primary-light/30 to-secondary-light/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-secondary-light text-secondary">
+      <section className="relative overflow-hidden bg-gradient-hero min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/90"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 animate-slide-up">
+              <div className="space-y-6">
+                <Badge variant="glass" className="glass animate-fade-in">
                   🇵🇰 Pakistan's Trusted Investment Partner
                 </Badge>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Start Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PSX Journey</span> Today
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight animate-scale-in">
+                  Start Your <span className="gradient-text animate-gradient bg-size-200">PSX Journey</span> Today
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl lg:text-2xl text-muted-foreground animate-fade-in">
                   Simplify stock market investing with our expert guidance. Get Shariah-compliant investment strategies designed for Pakistani investors.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6 animate-slide-up">
                 <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8 py-6"
+                  size="xl" 
+                  variant="glow"
+                  className="hover-lift"
                   asChild
                 >
                   <a href="https://wa.me/923181300262?text=Hi! I want to start my PSX journey. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                    <MessageCircle className="mr-3 h-6 w-6" />
                     Start Free Consultation
                   </a>
                 </Button>
                 <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6"
+                  variant="glass" 
+                  size="xl" 
+                  className="hover-scale"
                 >
                   Learn More
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-8">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
+                {stats.map((stat, index) => (
+                  <div key={stat.label} className="text-center glass rounded-2xl p-4 hover-lift">
+                    <div className="text-3xl font-bold gradient-text">{stat.number}</div>
+                    <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative animate-fade-in">
+              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl opacity-20 blur-xl animate-pulse-glow"></div>
               <img 
                 src={heroImage} 
                 alt="Professional Pakistani financial office showing PSX trading"
-                className="rounded-2xl shadow-strong w-full"
+                className="relative rounded-3xl shadow-strong w-full hover-lift floating"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Expert Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive investment solutions designed specifically for Pakistani investors
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-secondary/5"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center space-y-6 mb-20 animate-slide-up">
+            <Badge variant="accent" className="animate-pulse-glow">
+              ✨ Premium Services
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold gradient-text">Our Expert Services</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive investment solutions designed specifically for Pakistani investors with cutting-edge technology and personalized support
             </p>
           </div>
           
@@ -172,15 +179,16 @@ const Home = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="group hover:shadow-medium transition-all duration-300 border-0 shadow-soft">
-                  <CardHeader className="text-center pb-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-8 w-8 text-white" />
+                <Card key={index} className="group hover-lift animate-scale-in border-0 relative overflow-hidden" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardHeader className="text-center relative z-10">
+                    <div className="mx-auto w-20 h-20 rounded-3xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-medium">
+                      <Icon className="h-10 w-10 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-xl gradient-text group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-center text-muted-foreground">
+                  <CardContent className="relative z-10">
+                    <CardDescription className="text-center text-muted-foreground leading-relaxed">
                       {service.description}
                     </CardDescription>
                   </CardContent>
@@ -297,35 +305,42 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Ready to Start Your Investment Journey?
+      <section className="relative py-32 bg-gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-floating"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/30 rounded-full blur-3xl animate-floating" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="max-w-4xl mx-auto space-y-10 animate-slide-up">
+            <Badge variant="glass" className="glass text-white/90 animate-pulse-glow">
+              🚀 Transform Your Financial Future
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Ready to Start Your <span className="gradient-text bg-gradient-to-r from-white via-accent-light to-white bg-clip-text text-transparent">Investment Journey?</span>
             </h2>
-            <p className="text-xl text-white/90">
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Join thousands of Pakistani investors who trust Investing Sparkle for their financial growth. 
-              Get started with a free consultation today.
+              Get started with a free consultation today and unlock your investment potential.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
+                size="xl" 
+                variant="glass"
+                className="glass text-white hover:shadow-glow hover-lift"
                 asChild
               >
                 <a href="https://wa.me/923181300262?text=Hi! I'm ready to start my investment journey. Please provide me with a WhatsApp consultation." target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
+                  <MessageCircle className="mr-3 h-6 w-6" />
                   WhatsApp Consultation
                 </a>
               </Button>
               <Button 
-                size="lg" 
+                size="xl" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+                className="border-white/30 text-white hover:bg-white/10 hover:border-white hover-scale"
               >
                 View Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </div>
           </div>
