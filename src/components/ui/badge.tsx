@@ -4,21 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 backdrop-blur-sm",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-gradient-primary text-primary-foreground hover:opacity-90 hover:shadow-medium hover:scale-105",
+          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
         secondary:
-          "border-transparent bg-gradient-secondary text-secondary-foreground hover:opacity-90 hover:shadow-medium hover:scale-105",
-        accent:
-          "border-transparent bg-gradient-accent text-accent-foreground hover:opacity-90 hover:shadow-accent hover:scale-105",
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80 hover:shadow-medium",
-        outline: "border border-input text-foreground hover:bg-accent hover:text-accent-foreground",
-        glass: "glass text-foreground hover:shadow-soft hover:scale-105",
-        glow: "bg-gradient-primary text-primary-foreground animate-pulse-glow",
+          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        outline: "text-foreground",
       },
     },
     defaultVariants: {
