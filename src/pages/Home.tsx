@@ -53,7 +53,7 @@ const Home = () => {
     {
       name: "Ahmed Hassan",
       role: "Software Engineer",
-      content: "Profit Way helped me start my investment journey. Their guidance made PSX investing simple and profitable.",
+      content: "Investing Sparkle helped me start my investment journey. Their guidance made PSX investing simple and profitable.",
       rating: 5
     },
     {
@@ -197,7 +197,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Why Choose Profit Way?
+                Why Choose Investing Sparkle?
               </h2>
               <p className="text-lg text-muted-foreground">
                 We understand the Pakistani market and the unique needs of local investors. Our approach combines Islamic principles with modern investment strategies.
@@ -304,7 +304,7 @@ const Home = () => {
               Ready to Start Your Investment Journey?
             </h2>
             <p className="text-xl text-white/90">
-              Join thousands of Pakistani investors who trust Profit Way for their financial growth. 
+              Join thousands of Pakistani investors who trust Investing Sparkle for their financial growth. 
               Get started with a free consultation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

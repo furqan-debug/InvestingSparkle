@@ -100,7 +100,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <Badge variant="secondary" className="bg-secondary-light text-secondary">
-              🏢 About Profit Way
+              🏢 About Investing Sparkle
             </Badge>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
               Empowering Pakistani Investors to <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Build Wealth</span>
@@ -120,7 +120,7 @@ const About = () => {
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Profit Way was founded in 2020 with a simple yet powerful vision: to make stock market investing accessible, understandable, and profitable for every Pakistani investor, regardless of their background or experience level.
+                  Investing Sparkle was founded in 2020 with a simple yet powerful vision: to make stock market investing accessible, understandable, and profitable for every Pakistani investor, regardless of their background or experience level.
                 </p>
                 <p>
                   As practicing Muslims and experienced investors, we noticed a significant gap in the Pakistani market for Shariah-compliant investment guidance. Many potential investors were either afraid of the stock market or unsure about its permissibility in Islam.
@@ -261,7 +261,7 @@ const About = () => {
                   <h3 className="text-xl font-semibold mb-4 text-foreground">Regulatory Compliance</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Profit Way is fully compliant with SECP (Securities and Exchange Commission of Pakistan) regulations and maintains all required licenses for investment advisory services.
+                      Investing Sparkle is fully compliant with SECP (Securities and Exchange Commission of Pakistan) regulations and maintains all required licenses for investment advisory services.
                     </p>
                     <p>
                       Our Islamic finance compliance is verified by qualified Shariah scholars, ensuring all our recommendations meet the highest standards of Islamic financial principles.
@@ -282,7 +282,7 @@ const About = () => {
               Ready to Start Your Journey With Us?
             </h2>
             <p className="text-xl text-white/90">
-              Join thousands of Pakistani investors who trust Profit Way for their financial growth. 
+              Join thousands of Pakistani investors who trust Investing Sparkle for their financial growth. 
               Let us help you build wealth the halal way.
             </p>
             <Button 

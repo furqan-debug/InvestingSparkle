@@ -29,9 +29,9 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       description: "Send us detailed queries",
-      value: "info@profitway.pk",
+      value: "info@investingsparkle.pk",
       action: "Send Email",
-      link: "mailto:info@profitway.pk",
+      link: "mailto:info@investingsparkle.pk",
       primary: false
     },
     {
@@ -210,7 +210,7 @@ const Contact = () => {
                   <div className="flex items-start space-x-2">
                     <input type="checkbox" id="consent" className="mt-1" />
                     <Label htmlFor="consent" className="text-sm text-muted-foreground">
-                      I agree to receive communications from Profit Way regarding my inquiry and investment opportunities. *
+                      I agree to receive communications from Investing Sparkle regarding my inquiry and investment opportunities. *
                     </Label>
                   </div>
                   

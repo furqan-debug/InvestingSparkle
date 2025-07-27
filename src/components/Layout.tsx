@@ -28,7 +28,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-secondary">
                 <TrendingUp className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-foreground">Profit Way</span>
+              <span className="text-xl font-bold text-foreground">Investing Sparkle</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -127,7 +127,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-secondary">
                   <TrendingUp className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">Profit Way</span>
+                <span className="text-xl font-bold">Investing Sparkle</span>
               </div>
               <p className="text-muted-foreground text-sm">
                 Simplifying stock market investing for everyday people in Pakistan through smart, ethical, and long-term strategies.
@@ -159,14 +159,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>WhatsApp: +92 318 1300262</li>
-                <li>Email: info@profitway.pk</li>
+                <li>Email: info@investingsparkle.pk</li>
                 <li>Karachi, Pakistan</li>
               </ul>
             </div>
           </div>
           
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Profit Way. All rights reserved. | Regulated by SECP</p>
+            <p>&copy; 2024 Investing Sparkle. All rights reserved. | Regulated by SECP</p>
           </div>
         </div>
       </footer>
