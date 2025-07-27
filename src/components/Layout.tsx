@@ -25,9 +25,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-secondary">
-                <TrendingUp className="h-5 w-5 text-white" />
-              </div>
+              <img 
+                src="/lovable-uploads/b4d68747-cdd5-4e90-99b9-7a2ac554cabd.png" 
+                alt="Investing Sparkle Logo" 
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold text-foreground">Investing Sparkle</span>
             </Link>
 
@@ -124,9 +126,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-secondary">
-                  <TrendingUp className="h-5 w-5 text-white" />
-                </div>
+                <img 
+                  src="/lovable-uploads/b4d68747-cdd5-4e90-99b9-7a2ac554cabd.png" 
+                  alt="Investing Sparkle Logo" 
+                  className="h-8 w-auto"
+                />
                 <span className="text-xl font-bold">Investing Sparkle</span>
               </div>
               <p className="text-muted-foreground text-sm">
