@@ -163,7 +163,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>WhatsApp: +92 318 1300262</li>
-                <li>Email: info@investingsparkle.pk</li>
+                <li>Email: support@investingsparkle.com</li>
                 <li>Karachi, Pakistan</li>
               </ul>
             </div>

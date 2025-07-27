@@ -29,9 +29,9 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       description: "Send us detailed queries",
-      value: "info@investingsparkle.pk",
+      value: "support@investingsparkle.com",
       action: "Send Email",
-      link: "mailto:info@investingsparkle.pk",
+      link: "mailto:support@investingsparkle.com",
       primary: false
     },
     {
