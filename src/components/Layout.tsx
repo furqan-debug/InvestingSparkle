@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, MessageCircle, TrendingUp } from "lucide-react";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 const Layout = ({
   children
 }: {
@@ -10,6 +11,9 @@ const Layout = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  
+  // Automatically scroll to top on route change
+  useScrollToTop();
   const navigation = [{
     name: "Home",
     href: "/"
