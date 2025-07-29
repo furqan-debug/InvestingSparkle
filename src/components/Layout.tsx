@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, MessageCircle, TrendingUp } from "lucide-react";
 import { useScrollToTop } from "@/hooks/use-scroll-to-top";
+import ThemeToggle from "./ThemeToggle";
 const Layout = ({
   children
 }: {
@@ -50,6 +51,7 @@ const Layout = ({
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center space-x-4">
+              <ThemeToggle />
               <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <a href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services. Can you help me get started with PSX investing?" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                   <MessageCircle className="h-4 w-4" />
