@@ -106,16 +106,16 @@ const Home = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-primary/5 via-primary-light/30 to-secondary-light/20 animate-float">
+      <section className="relative overflow-hidden bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="bg-secondary-light text-secondary animate-pulse-glow">
+                <Badge variant="secondary" className="bg-primary/10 text-primary">
                   🇵🇰 Pakistan's Trusted Investment Partner
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Start Your <span className="text-gradient">PSX Journey</span> Today
+                  Start Your <span className="text-primary">PSX Journey</span> Today
                 </h1>
                 <p className="text-xl text-muted-foreground">
                   Simplify stock market investing with our expert guidance. Get Shariah-compliant investment strategies designed for Pakistani investors.
@@ -125,7 +125,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8 py-6 hover:scale-105 transition-all duration-300 animate-glow"
+                  className="text-lg px-8 py-6 transition-colors"
                   asChild
                 >
                   <a href="https://wa.me/923181300262?text=Hi! I want to start my PSX journey. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
@@ -136,7 +136,7 @@ const Home = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6 hover:scale-105 transition-all duration-300"
+                  className="text-lg px-8 py-6 transition-colors"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -145,21 +145,20 @@ const Home = () => {
 
               <div className="flex items-center space-x-8">
                 {stats.map((stat, index) => (
-                  <div key={stat.label} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="text-2xl font-bold text-primary animate-number-change">{stat.number}</div>
+                  <div key={stat.label} className="text-center">
+                    <div className="text-2xl font-bold text-primary">{stat.number}</div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="relative animate-float" style={{ animationDelay: '1s' }}>
+            <div className="relative">
               <img 
                 src={heroImage} 
                 alt="Professional Pakistani financial office showing PSX trading"
-                className="rounded-2xl shadow-strong w-full"
+                className="rounded-2xl shadow-lg w-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
@@ -175,7 +174,7 @@ const Home = () => {
       {/* Services Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16 animate-fade-in">
+          <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Expert Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive investment solutions designed specifically for Pakistani investors
@@ -186,10 +185,10 @@ const Home = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="glass-card hover:scale-105 transition-all duration-300 animate-float" style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card key={index} className="border hover:shadow-lg transition-shadow duration-300">
                   <CardHeader className="text-center pb-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-glow">
-                      <Icon className="h-8 w-8 text-white" />
+                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-4">
+                      <Icon className="h-8 w-8 text-primary-foreground" />
                     </div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
                   </CardHeader>

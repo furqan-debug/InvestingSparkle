@@ -11,14 +11,14 @@ interface Stock {
 
 const StockTicker = () => {
   const [stocks, setStocks] = useState<Stock[]>([
-    { symbol: "OGDC", name: "Oil & Gas Development", price: 85.50, change: 2.15, changePercent: 2.58 },
-    { symbol: "PSO", name: "Pakistan State Oil", price: 203.75, change: -1.25, changePercent: -0.61 },
-    { symbol: "LUCK", name: "Lucky Cement", price: 542.00, change: 8.75, changePercent: 1.64 },
-    { symbol: "ENGRO", name: "Engro Corporation", price: 267.80, change: 3.20, changePercent: 1.21 },
-    { symbol: "HBL", name: "Habib Bank Limited", price: 89.45, change: -0.55, changePercent: -0.61 },
-    { symbol: "UBL", name: "United Bank Limited", price: 156.30, change: 2.80, changePercent: 1.82 },
-    { symbol: "NESTLE", name: "Nestle Pakistan", price: 5840.00, change: 45.00, changePercent: 0.78 },
-    { symbol: "TRG", name: "The Resource Group", price: 108.50, change: 4.25, changePercent: 4.08 }
+    { symbol: "OGDC", name: "Oil & Gas Development", price: 142.75, change: 1.25, changePercent: 0.88 },
+    { symbol: "PSO", name: "Pakistan State Oil", price: 289.50, change: -2.75, changePercent: -0.94 },
+    { symbol: "LUCK", name: "Lucky Cement", price: 695.20, change: 5.40, changePercent: 0.78 },
+    { symbol: "ENGRO", name: "Engro Corporation", price: 312.80, change: 2.60, changePercent: 0.84 },
+    { symbol: "HBL", name: "Habib Bank Limited", price: 95.45, change: -0.35, changePercent: -0.37 },
+    { symbol: "UBL", name: "United Bank Limited", price: 189.30, change: 1.80, changePercent: 0.96 },
+    { symbol: "NESTLE", name: "Nestle Pakistan", price: 6420.00, change: 35.00, changePercent: 0.55 },
+    { symbol: "TRG", name: "The Resource Group", price: 125.75, change: 2.25, changePercent: 1.82 }
   ]);
 
   // Simulate real-time updates
@@ -26,8 +26,8 @@ const StockTicker = () => {
     const interval = setInterval(() => {
       setStocks(prevStocks => 
         prevStocks.map(stock => {
-          const randomChange = (Math.random() - 0.5) * 5;
-          const newPrice = Math.max(stock.price + randomChange, 1);
+          const randomChange = (Math.random() - 0.5) * 2; // Smaller, more realistic changes
+          const newPrice = Math.max(stock.price + randomChange, stock.price * 0.95); // More realistic floor
           const change = newPrice - stock.price;
           const changePercent = (change / stock.price) * 100;
           
@@ -39,7 +39,7 @@ const StockTicker = () => {
           };
         })
       );
-    }, 3000);
+    }, 8000); // Less frequent updates
 
     return () => clearInterval(interval);
   }, []);
