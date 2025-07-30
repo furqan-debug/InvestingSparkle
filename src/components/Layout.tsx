@@ -58,7 +58,7 @@ const Layout = ({
                   <span>WhatsApp</span>
                 </a>
               </Button>
-              <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+              <Button size="sm">
                 Start Your Journey
               </Button>
             </div>
@@ -82,7 +82,7 @@ const Layout = ({
                         <span>WhatsApp</span>
                       </a>
                     </Button>
-                    <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                    <Button className="w-full">
                       Start Your Journey
                     </Button>
                   </div>

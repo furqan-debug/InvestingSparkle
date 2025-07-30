@@ -310,21 +310,21 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary animate-gradient-shift">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl font-bold">
               Ready to Start Your Investment Journey?
             </h2>
-            <p className="text-xl text-white/90 animate-fade-in">
+            <p className="text-xl opacity-90">
               Join thousands of Pakistani investors who trust Investing Sparkle for their financial growth. 
               Get started with a free consultation today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 variant="secondary"
-                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 hover:scale-105 transition-all duration-300 animate-glow"
+                className="text-lg px-8 py-6"
                 asChild
               >
                 <a href="https://wa.me/923181300262?text=Hi! I'm ready to start my investment journey. Please provide me with a WhatsApp consultation." target="_blank" rel="noopener noreferrer">
@@ -335,7 +335,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 hover:scale-105 transition-all duration-300"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6"
               >
                 View Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
