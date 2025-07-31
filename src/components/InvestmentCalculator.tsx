@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, TrendingUp, DollarSign, Calendar } from "lucide-react";
+import { Calculator, TrendingUp, DollarSign, Calendar, Sparkles } from "lucide-react";
+import MoneyRain from "./MoneyRain";
 
 const InvestmentCalculator = () => {
   const [principal, setPrincipal] = useState(100000);
@@ -11,6 +12,7 @@ const InvestmentCalculator = () => {
   const [annualReturn, setAnnualReturn] = useState(12);
   const [years, setYears] = useState(10);
   const [result, setResult] = useState({ futureValue: 0, totalContributions: 0, totalReturns: 0 });
+  const [showMoneyRain, setShowMoneyRain] = useState(false);
 
   const calculateInvestment = () => {
     const monthlyRate = annualReturn / 100 / 12;
@@ -32,6 +34,12 @@ const InvestmentCalculator = () => {
       totalContributions: Math.round(totalContributions),
       totalReturns: Math.round(totalReturns)
     });
+
+    // Trigger money rain for big returns!
+    if (totalReturns > 1000000) {
+      setShowMoneyRain(true);
+      setTimeout(() => setShowMoneyRain(false), 100);
+    }
   };
 
   useEffect(() => {
@@ -48,14 +56,17 @@ const InvestmentCalculator = () => {
   };
 
   return (
-    <Card className="border-border shadow-lg">
-      <CardHeader className="text-center">
-        <CardTitle className="flex items-center justify-center space-x-2 text-2xl">
-          <Calculator className="w-6 h-6 text-primary" />
-          <span>Investment Calculator</span>
-        </CardTitle>
-        <p className="text-muted-foreground">Calculate your potential returns with PSX investing</p>
-      </CardHeader>
+    <>
+      <MoneyRain trigger={showMoneyRain} />
+      <Card className="border-border shadow-lg">
+        <CardHeader className="text-center">
+          <CardTitle className="flex items-center justify-center space-x-2 text-2xl">
+            <Calculator className="w-6 h-6 text-primary" />
+            <span>Investment Calculator</span>
+            <Sparkles className="w-5 h-5 text-yellow-500" />
+          </CardTitle>
+          <p className="text-muted-foreground">Calculate your potential returns with PSX investing</p>
+        </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
@@ -147,6 +158,7 @@ const InvestmentCalculator = () => {
         </div>
       </CardContent>
     </Card>
+    </>
   );
 };
 

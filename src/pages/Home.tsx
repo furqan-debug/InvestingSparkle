@@ -16,6 +16,9 @@ import {
 import heroImage from "@/assets/hero-image.jpg";
 import StockTicker from "@/components/StockTicker";
 import InvestmentCalculator from "@/components/InvestmentCalculator";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import PakistaniTicker from "@/components/PakistaniTicker";
+import InteractiveCard from "@/components/InteractiveCard";
 
 const Home = () => {
   const services = [
@@ -100,6 +103,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Pakistani Facts Ticker */}
+      <PakistaniTicker />
+      
       {/* Stock Ticker */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <StockTicker />
@@ -145,9 +151,9 @@ const Home = () => {
 
               <div className="flex items-center space-x-8">
                 {stats.map((stat, index) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div key={stat.label} className="text-center group">
+                    <AnimatedCounter end={stat.number} />
+                    <div className="text-sm text-muted-foreground group-hover:text-primary transition-colors">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -237,26 +243,26 @@ const Home = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+              <InteractiveCard className="p-6 text-center">
                 <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Shariah Compliant</h3>
                 <p className="text-sm text-muted-foreground">All investments follow Islamic principles</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+              </InteractiveCard>
+              <InteractiveCard className="p-6 text-center">
                 <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Expert Team</h3>
                 <p className="text-sm text-muted-foreground">Experienced Pakistani market analysts</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+              </InteractiveCard>
+              <InteractiveCard className="p-6 text-center">
                 <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Proven Results</h3>
                 <p className="text-sm text-muted-foreground">Consistent returns for our clients</p>
-              </Card>
-              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+              </InteractiveCard>
+              <InteractiveCard className="p-6 text-center">
                 <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">24/7 Support</h3>
                 <p className="text-sm text-muted-foreground">Always available on WhatsApp</p>
-              </Card>
+              </InteractiveCard>
             </div>
           </div>
         </div>
