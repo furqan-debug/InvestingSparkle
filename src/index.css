@@ -114,6 +114,14 @@ All colors MUST be HSL.
   .animate-scroll-x {
     animation: scroll-x 30s linear infinite;
   }
+  
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm;
+  }
+  
+  .border-gradient {
+    @apply border border-border;
+  }
 }
 
 @keyframes scroll-x {

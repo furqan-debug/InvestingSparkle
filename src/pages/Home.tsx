@@ -110,14 +110,14 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-primary/10 text-primary">
+              <div className="space-y-6">
+                <Badge variant="secondary" className="inline-flex items-center px-3 py-1 text-sm font-medium">
                   🇵🇰 Pakistan's Trusted Investment Partner
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Start Your <span className="text-primary">PSX Journey</span> Today
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Simplify stock market investing with our expert guidance. Get Shariah-compliant investment strategies designed for Pakistani investors.
                 </p>
               </div>
@@ -125,7 +125,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-6 transition-colors"
+                  className="text-lg px-8 py-4 transition-all duration-200 hover:scale-105"
                   asChild
                 >
                   <a href="https://wa.me/923181300262?text=Hi! I want to start my PSX journey. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
@@ -136,7 +136,7 @@ const Home = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-8 py-6 transition-colors"
+                  className="text-lg px-8 py-4 transition-all duration-200 hover:scale-105"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -154,11 +154,14 @@ const Home = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Professional Pakistani financial office showing PSX trading"
-                className="rounded-2xl shadow-lg w-full"
-              />
+              <div className="relative overflow-hidden rounded-2xl">
+                <img 
+                  src={heroImage} 
+                  alt="Professional Pakistani financial office showing PSX trading"
+                  className="w-full h-auto object-cover shadow-xl"
+                />
+                <div className="absolute inset-0 ring-1 ring-black/5 rounded-2xl"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -185,15 +188,15 @@ const Home = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="border hover:shadow-lg transition-shadow duration-300">
+                <Card key={index} className="group border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <CardHeader className="text-center pb-4">
-                    <div className="mx-auto w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-4">
-                      <Icon className="h-8 w-8 text-primary-foreground" />
+                    <div className="mx-auto w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="h-8 w-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-center text-muted-foreground">
+                    <CardDescription className="text-center text-muted-foreground leading-relaxed">
                       {service.description}
                     </CardDescription>
                   </CardContent>
@@ -208,11 +211,11 @@ const Home = () => {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                 Why Choose Investing Sparkle?
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 We understand the Pakistani market and the unique needs of local investors. Our approach combines Islamic principles with modern investment strategies.
               </p>
               
@@ -225,8 +228,8 @@ const Home = () => {
                   "Premium WhatsApp group access",
                   "SECP regulated and compliant"
                 ].map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="text-foreground">{benefit}</span>
                   </div>
                 ))}
@@ -234,23 +237,23 @@ const Home = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <Card className="glass-card p-6 text-center hover:scale-105 transition-all duration-300 animate-float">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4 animate-glow" />
+              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Shariah Compliant</h3>
                 <p className="text-sm text-muted-foreground">All investments follow Islamic principles</p>
               </Card>
-              <Card className="glass-card p-6 text-center hover:scale-105 transition-all duration-300 animate-float" style={{ animationDelay: '0.1s' }}>
-                <Users className="h-12 w-12 text-secondary mx-auto mb-4 animate-glow" />
+              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+                <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Expert Team</h3>
                 <p className="text-sm text-muted-foreground">Experienced Pakistani market analysts</p>
               </Card>
-              <Card className="glass-card p-6 text-center hover:scale-105 transition-all duration-300 animate-float" style={{ animationDelay: '0.2s' }}>
-                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4 animate-glow" />
+              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Proven Results</h3>
                 <p className="text-sm text-muted-foreground">Consistent returns for our clients</p>
               </Card>
-              <Card className="glass-card p-6 text-center hover:scale-105 transition-all duration-300 animate-float" style={{ animationDelay: '0.3s' }}>
-                <MessageCircle className="h-12 w-12 text-secondary mx-auto mb-4 animate-glow" />
+              <Card className="p-6 text-center hover:shadow-lg transition-all duration-300 border-border">
+                <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">24/7 Support</h3>
                 <p className="text-sm text-muted-foreground">Always available on WhatsApp</p>
               </Card>
@@ -262,21 +265,21 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16 animate-fade-in">
+          <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">What Our Clients Say</h2>
             <p className="text-xl text-muted-foreground">Real success stories from Pakistani investors</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-card hover:scale-105 transition-all duration-300 animate-float" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-border">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current animate-glow" />
+                      <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-4 italic">"{testimonial.content}"</p>
+                  <p className="text-muted-foreground mb-4 italic leading-relaxed">"{testimonial.content}"</p>
                   <div>
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
@@ -291,17 +294,17 @@ const Home = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16 animate-fade-in">
+          <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Frequently Asked Questions</h2>
             <p className="text-xl text-muted-foreground">Get answers to common questions about PSX investing</p>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={index} className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="hover:shadow-md transition-all duration-300 border-border">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-lg mb-3 text-foreground">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
