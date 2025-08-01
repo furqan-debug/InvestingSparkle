@@ -1,15 +1,17 @@
+
 import { useState, useEffect } from 'react';
+import { TrendingUp } from 'lucide-react';
 
 const PakistaniTicker = () => {
   const [currentFact, setCurrentFact] = useState(0);
   
   const facts = [
-    "🇵🇰 PSX is the 3rd largest stock exchange in South Asia",
-    "📈 Over 540 companies listed on Pakistan Stock Exchange",
-    "💎 PSX KSE-100 Index tracks top 100 companies",
-    "🕌 70% of PSX stocks are Shariah compliant",
-    "🏦 Banking sector represents 30% of market capitalization",
-    "⚡ Textile sector is Pakistan's largest export industry"
+    "PSX is the 3rd largest stock exchange in South Asia",
+    "Over 540 companies listed on Pakistan Stock Exchange",
+    "KSE-100 Index tracks top performing companies",
+    "70% of PSX stocks are Shariah compliant",
+    "Banking sector represents 30% of market capitalization",
+    "Textile sector drives Pakistan's export economy"
   ];
 
   useEffect(() => {
@@ -21,10 +23,11 @@ const PakistaniTicker = () => {
   }, []);
 
   return (
-    <div className="bg-primary/5 border-y border-primary/10 py-3 overflow-hidden">
+    <div className="bg-secondary/50 border-y border-border py-3">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center">
-          <div className="text-sm font-medium text-primary transition-all duration-500 ease-in-out">
+        <div className="flex items-center justify-center space-x-2">
+          <TrendingUp className="h-4 w-4 text-primary" />
+          <div className="text-sm font-medium text-foreground transition-all duration-300 ease-in-out">
             {facts[currentFact]}
           </div>
         </div>

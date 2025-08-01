@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 
 interface AnimatedCounterProps {
@@ -5,7 +6,7 @@ interface AnimatedCounterProps {
   duration?: number;
 }
 
-const AnimatedCounter = ({ end, duration = 2000 }: AnimatedCounterProps) => {
+const AnimatedCounter = ({ end, duration = 1000 }: AnimatedCounterProps) => {
   const [count, setCount] = useState('0');
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -44,8 +45,9 @@ const AnimatedCounter = ({ end, duration = 2000 }: AnimatedCounterProps) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       
-      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-      const currentCount = Math.floor(easeOutCubic * numericEnd);
+      // Subtle easing
+      const easeOut = 1 - Math.pow(1 - progress, 2);
+      const currentCount = Math.floor(easeOut * numericEnd);
       
       setCount(currentCount + suffix);
       
@@ -58,7 +60,7 @@ const AnimatedCounter = ({ end, duration = 2000 }: AnimatedCounterProps) => {
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={ref} className="text-2xl font-bold text-primary">
+    <div ref={ref} className="text-2xl font-semibold text-primary">
       {count}
     </div>
   );
