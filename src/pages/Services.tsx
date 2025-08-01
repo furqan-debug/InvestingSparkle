@@ -1,330 +1,227 @@
-import { Button } from "@/components/ui/button";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Building,
-  Users,
-  Shield,
-  Award,
-  Clock,
-  MessageCircle,
-  FileText,
-  HeadphonesIcon,
-  CheckCircle,
-  ArrowRight
-} from "lucide-react";
+import { CheckCircle, Shield, TrendingUp, Users, MessageCircle, BarChart3, BookOpen, HeadphonesIcon } from "lucide-react";
+import InteractiveCard from "@/components/InteractiveCard";
 
 const Services = () => {
   const services = [
     {
-      icon: Building,
-      title: "PSX Account Opening Assistance",
-      description: "Complete step-by-step guidance to open your Pakistan Stock Exchange trading account",
+      title: "PSX Account Opening",
+      description: "Complete assistance in opening your Pakistan Stock Exchange trading account with verified brokers.",
+      price: "Free Consultation",
       features: [
-        "Broker selection assistance",
-        "Document preparation guidance",
+        "Broker comparison and selection",
+        "Documentation assistance",
         "Account verification support",
-        "Initial deposit assistance",
-        "Platform setup tutorial"
+        "Initial setup guidance"
       ],
-      price: "Free with any package",
+      icon: Users,
       popular: false
     },
     {
-      icon: Users,
-      title: "First-Time Investor Package",
-      description: "Perfect for beginners who want to start their PSX journey with confidence",
+      title: "Investment Packages",
+      description: "Curated investment portfolios designed for different risk appetites and financial goals.",
+      price: "Starting from PKR 50,000",
       features: [
-        "PSX account opening",
-        "Basic investment education",
-        "Risk assessment profile",
-        "First portfolio setup",
-        "30-day support included"
+        "Diversified stock selection",
+        "Risk-adjusted portfolios",
+        "Monthly performance reports",
+        "Rebalancing recommendations"
       ],
-      price: "PKR 15,000",
+      icon: BarChart3,
       popular: true
     },
     {
-      icon: Award,
-      title: "Portfolio Review & Optimization",
-      description: "Professional analysis and optimization of your existing investment portfolio",
+      title: "Portfolio Review",
+      description: "Comprehensive analysis of your existing investments with actionable recommendations.",
+      price: "PKR 5,000",
       features: [
         "Complete portfolio analysis",
-        "Risk-return optimization",
-        "Rebalancing recommendations",
-        "Performance tracking setup",
-        "Quarterly review meetings"
+        "Risk assessment",
+        "Performance evaluation",
+        "Strategic recommendations"
       ],
-      price: "PKR 10,000",
+      icon: TrendingUp,
       popular: false
     },
     {
-      icon: Shield,
-      title: "Monthly Shariah-Compliant Stock Picks",
-      description: "Carefully researched Halal stock recommendations updated monthly",
+      title: "Stock Research & Picks",
+      description: "Weekly stock recommendations based on fundamental and technical analysis.",
+      price: "PKR 15,000/month",
       features: [
-        "5-7 monthly stock picks",
-        "Detailed research reports",
+        "Weekly stock picks",
+        "Detailed analysis reports",
         "Entry and exit strategies",
-        "Risk assessment for each pick",
-        "WhatsApp group access"
+        "Risk management guidelines"
       ],
-      price: "PKR 5,000/month",
-      popular: true
-    },
-    {
-      icon: Clock,
-      title: "Weekly Market Updates & Reports",
-      description: "Stay informed with our comprehensive weekly market analysis and insights",
-      features: [
-        "Weekly market summary",
-        "Sector analysis and trends",
-        "Economic indicators review",
-        "Trading opportunities",
-        "PDF and WhatsApp delivery"
-      ],
-      price: "PKR 3,000/month",
+      icon: BookOpen,
       popular: false
     },
     {
-      icon: MessageCircle,
-      title: "Premium WhatsApp Group Access",
-      description: "Exclusive access to our premium investment community and real-time alerts",
+      title: "Educational Sessions",
+      description: "Learn the fundamentals of stock market investing through structured sessions.",
+      price: "PKR 25,000",
       features: [
-        "Real-time market alerts",
-        "Community discussions",
-        "Expert Q&A sessions",
-        "Breaking news updates",
-        "Priority customer support"
+        "Market fundamentals training",
+        "Technical analysis basics",
+        "Risk management strategies",
+        "Live trading demonstrations"
       ],
-      price: "PKR 2,000/month",
-      popular: false
-    },
-    {
       icon: HeadphonesIcon,
-      title: "One-on-One Mentorship",
-      description: "Personalized investment coaching and mentorship for serious investors",
-      features: [
-        "Monthly 1-hour sessions",
-        "Personalized investment plan",
-        "Direct access to mentor",
-        "Custom portfolio tracking",
-        "Investment psychology coaching"
-      ],
-      price: "PKR 25,000/month",
-      popular: false
-    }
-  ];
-
-  const packages = [
-    {
-      name: "Starter Package",
-      price: "PKR 20,000",
-      description: "Perfect for beginners starting their investment journey",
-      features: [
-        "PSX account opening assistance",
-        "First-time investor package",
-        "3 months of stock picks",
-        "Basic portfolio setup",
-        "WhatsApp group access"
-      ],
       popular: false
     },
     {
-      name: "Growth Package",
-      price: "PKR 45,000",
-      description: "Comprehensive package for serious investors",
+      title: "Premium Advisory",
+      description: "Comprehensive investment advisory service with dedicated support.",
+      price: "PKR 50,000/month",
       features: [
-        "Everything in Starter Package",
-        "Portfolio review & optimization",
-        "6 months of weekly reports",
-        "Quarterly mentorship sessions",
-        "Priority customer support"
+        "Personalized investment strategy",
+        "Direct WhatsApp support",
+        "Weekly portfolio reviews",
+        "Priority market updates"
       ],
-      popular: true
-    },
-    {
-      name: "Elite Package",
-      price: "PKR 75,000",
-      description: "Premium package with full mentorship and support",
-      features: [
-        "Everything in Growth Package",
-        "Monthly one-on-one mentorship",
-        "Custom investment strategies",
-        "Unlimited consultations",
-        "Direct mentor access"
-      ],
+      icon: Shield,
       popular: false
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/5 via-primary-light/30 to-secondary-light/20 py-20">
+      <section className="bg-gradient-to-br from-primary/5 to-secondary/10 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <Badge variant="secondary" className="bg-secondary-light text-secondary">
-              📈 Professional Investment Services
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
-              Expert Investment Services for <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pakistani Investors</span>
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Professional Investment Services
             </h1>
-            <p className="text-xl text-muted-foreground">
-              From PSX account opening to advanced portfolio management, we provide comprehensive investment solutions tailored for the Pakistani market.
+            <p className="text-xl text-muted-foreground mb-8">
+              Comprehensive solutions for your stock market investment journey in Pakistan
             </p>
+            <Button size="lg" className="mr-4">
+              Get Started Today
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="https://wa.me/923181300262?text=Hi! I'd like to learn more about your investment services." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4" />
+                <span>Consult Now</span>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Individual Services */}
-      <section className="py-20 bg-background">
+      {/* Services Grid */}
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose from our range of professional investment services designed specifically for Pakistani investors
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Our Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Choose from our range of professional services designed to help you succeed in the Pakistan Stock Exchange
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className={`group hover:shadow-medium transition-all duration-300 border-0 shadow-soft ${service.popular ? 'ring-2 ring-primary' : ''}`}>
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-xl">{service.title}</CardTitle>
-                          {service.popular && (
-                            <Badge variant="secondary" className="mt-1 bg-secondary-light text-secondary">
-                              Most Popular
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">{service.price}</div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <CardDescription className="text-muted-foreground">
-                      {service.description}
-                    </CardDescription>
-                    <div className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
-                          <span className="text-sm text-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                      asChild
-                    >
-                      <a href={`https://wa.me/923181300262?text=Hi! I'm interested in your "${service.title}" service. Price: ${service.price}. Can you provide me with more details?`} target="_blank" rel="noopener noreferrer">
-                        <MessageCircle className="mr-2 h-4 w-4" />
-                        Get Started
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Package Deals */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Package Deals</h2>
-            <p className="text-xl text-muted-foreground">
-              Save money with our comprehensive packages designed for different investment levels
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {packages.map((pkg, index) => (
-              <Card key={index} className={`relative ${pkg.popular ? 'ring-2 ring-primary scale-105 shadow-strong' : 'shadow-soft'} border-0`}>
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1">
-                      Most Popular
-                    </Badge>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <InteractiveCard key={index} className="h-full">
+                <div className="p-6 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <service.icon className="h-8 w-8 text-primary" />
+                    {service.popular && (
+                      <Badge variant="default" className="bg-primary text-primary-foreground">
+                        Most Popular
+                      </Badge>
+                    )}
                   </div>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                  <div className="text-3xl font-bold text-primary">{pkg.price}</div>
-                  <CardDescription className="text-muted-foreground">
-                    {pkg.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-3">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
-                        <span className="text-sm text-foreground">{feature}</span>
-                      </div>
+                  
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground mb-4 flex-grow">{service.description}</p>
+                  
+                  <div className="mb-4">
+                    <p className="text-2xl font-bold text-primary">{service.price}</p>
+                  </div>
+                  
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-success mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
                     ))}
-                  </div>
-                  <Button 
-                    className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90' : ''}`}
-                    variant={pkg.popular ? 'default' : 'outline'}
-                    asChild
-                  >
-                    <a href={`https://wa.me/923181300262?text=Hi! I want to purchase the "${pkg.name}" package. Price: ${pkg.price}. Please provide me with the details to get started.`} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Choose Package
-                    </a>
+                  </ul>
+                  
+                  <Button className="w-full mt-auto">
+                    Choose This Service
                   </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </InteractiveCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Ready to Choose Your Service?
-            </h2>
-            <p className="text-xl text-white/90">
-              Not sure which service is right for you? Contact us for a free consultation and we'll help you choose the perfect package.
+      {/* Why Choose Us */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Why Choose Investing Sparkle</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We provide professional, ethical, and transparent investment services
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
-                asChild
-              >
-                <a href="https://wa.me/923181300262?text=Hi! I need help choosing the right service/package for my investment needs. Can you provide me with a free consultation?" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Free Consultation
-                </a>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
-              >
-                Compare Packages
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">SECP Regulated</h3>
+              <p className="text-muted-foreground">
+                We operate under the regulations of Securities and Exchange Commission of Pakistan
+              </p>
             </div>
+
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Proven Track Record</h3>
+              <p className="text-muted-foreground">
+                Our investment strategies have consistently delivered results for our clients
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Dedicated Support</h3>
+              <p className="text-muted-foreground">
+                Get personalized support and guidance throughout your investment journey
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Start Investing?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Join hundreds of successful investors who trust us with their financial future
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button variant="secondary" size="lg">
+              Start Your Journey
+            </Button>
+            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+              <a href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services and would like to get started." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4" />
+                <span>Contact Us</span>
+              </a>
+            </Button>
           </div>
         </div>
       </section>

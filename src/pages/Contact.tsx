@@ -1,19 +1,9 @@
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  MessageCircle,
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Send,
-  CheckCircle
-} from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Shield } from "lucide-react";
+import InteractiveCard from "@/components/InteractiveCard";
 
 const Contact = () => {
   const contactMethods = [
@@ -21,275 +11,289 @@ const Contact = () => {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Get instant responses to your queries",
-      value: "+92 318 1300262",
+      contact: "+92 318 1300262",
       action: "Chat Now",
-      link: "https://wa.me/923181300262",
-      primary: true
+      link: "https://wa.me/923181300262?text=Hi! I'm interested in your investment services and would like to get more information."
+    },
+    {
+      icon: Phone,
+      title: "Phone Call",
+      description: "Speak directly with our investment advisors",
+      contact: "+92 318 1300262",
+      action: "Call Now",
+      link: "tel:+923181300262"
     },
     {
       icon: Mail,
       title: "Email",
-      description: "Send us detailed queries",
-      value: "support@investingsparkle.com",
+      description: "Send us detailed queries or documents",
+      contact: "support@investingsparkle.com",
       action: "Send Email",
-      link: "mailto:support@investingsparkle.com",
-      primary: false
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      description: "Call for urgent matters",
-      value: "+92 318 1300262",
-      action: "Call Now",
-      link: "tel:+923181300262",
-      primary: false
+      link: "mailto:support@investingsparkle.com"
     }
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
-    { day: "Saturday", time: "10:00 AM - 4:00 PM" },
-    { day: "Sunday", time: "Closed" }
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
+    { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
+    { day: "Sunday", hours: "Closed" }
   ];
 
   const faqs = [
     {
-      question: "How quickly do you respond to inquiries?",
-      answer: "We typically respond to WhatsApp messages within 30 minutes during business hours and to emails within 24 hours."
+      question: "How do I start investing with Investing Sparkle?",
+      answer: "Simply contact us via WhatsApp or phone. We'll schedule a consultation to understand your goals and help you open a PSX account."
     },
     {
-      question: "Do you offer free consultations?",
-      answer: "Yes! We offer a free 30-minute consultation to understand your investment goals and explain how we can help."
+      question: "What is the minimum investment amount?",
+      answer: "Our investment packages start from PKR 50,000, but we can work with different budgets based on your financial situation."
     },
     {
-      question: "Can I visit your office?",
-      answer: "We operate primarily online to keep our costs low and pass the savings to our clients. However, we can arrange in-person meetings for premium clients."
+      question: "Are your services Shariah compliant?",
+      answer: "Yes, we offer Shariah-compliant investment options and ensure all recommendations meet Islamic finance principles."
     },
     {
-      question: "What information should I prepare before contacting you?",
-      answer: "Please have your investment goals, risk tolerance, current financial situation, and any existing investments information ready."
+      question: "How often do you provide portfolio updates?",
+      answer: "We provide monthly performance reports for all clients, with weekly updates for premium advisory service subscribers."
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/5 via-primary-light/30 to-secondary-light/20 py-20">
+      <section className="bg-gradient-to-br from-primary/5 to-secondary/10 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <Badge variant="secondary" className="bg-secondary-light text-secondary">
-              📞 Get In Touch
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
-              Ready to Start Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Investment Journey?</span>
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Have questions about PSX investing or need personalized guidance? Our expert team is here to help you every step of the way.
+            <p className="text-xl text-muted-foreground mb-8">
+              Ready to start your investment journey? Our expert team is here to guide you every step of the way.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Methods */}
-          <div className="lg:col-span-1 space-y-6">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
-            
-            {contactMethods.map((method, index) => {
-              const Icon = method.icon;
-              return (
-                <Card key={index} className={`shadow-soft border-0 group hover:shadow-medium transition-all duration-300 ${method.primary ? 'ring-2 ring-primary' : ''}`}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className={`w-12 h-12 rounded-xl ${method.primary ? 'bg-gradient-to-r from-primary to-secondary' : 'bg-muted'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className={`h-6 w-6 ${method.primary ? 'text-white' : 'text-primary'}`} />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-1">{method.title}</h3>
-                        <p className="text-sm text-muted-foreground mb-2">{method.description}</p>
-                        <p className="font-medium text-primary mb-3">{method.value}</p>
-                        <Button 
-                          size="sm" 
-                          className={method.primary ? "bg-gradient-to-r from-primary to-secondary hover:opacity-90" : ""}
-                          variant={method.primary ? "default" : "outline"}
-                          asChild
-                        >
-                          <a href={method.link} target="_blank" rel="noopener noreferrer">
-                            {method.action}
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-
-            <Card className="shadow-soft border-0">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-primary" />
-                  <span>Office Hours</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {officeHours.map((schedule, index) => (
-                  <div key={index} className="flex justify-between items-center">
-                    <span className="text-sm text-foreground">{schedule.day}</span>
-                    <span className="text-sm text-muted-foreground">{schedule.time}</span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft border-0">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Karachi, Pakistan<br />
-                      (Virtual consultations available)
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="shadow-soft border-0">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you within 24 hours. For urgent matters, please use WhatsApp.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name *</Label>
-                    <Input id="firstName" placeholder="Your first name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name *</Label>
-                    <Input id="lastName" placeholder="Your last name" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" placeholder="+92 318 1300262" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject *</Label>
-                  <Input id="subject" placeholder="What would you like to discuss?" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Please describe your investment goals, experience level, and any specific questions you have..."
-                    rows={6}
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-2">
-                    <input type="checkbox" id="consent" className="mt-1" />
-                    <Label htmlFor="consent" className="text-sm text-muted-foreground">
-                      I agree to receive communications from Investing Sparkle regarding my inquiry and investment opportunities. *
-                    </Label>
-                  </div>
-                  
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg py-6">
-                    <Send className="mr-2 h-5 w-5" />
-                    Send Message
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mt-20">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground">
-              Quick answers to common questions about contacting us
+      {/* Contact Methods */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Choose Your Preferred Contact Method</h2>
+            <p className="text-muted-foreground">
+              We're available through multiple channels to provide you with the best support possible
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="shadow-soft border-0">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-lg mb-3 text-foreground">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Quick Action Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="shadow-soft border-0 p-8">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mx-auto">
-                    <MessageCircle className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {contactMethods.map((method, index) => (
+              <InteractiveCard key={index}>
+                <div className="p-6 text-center">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <method.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">Need Immediate Help?</h3>
-                  <p className="text-muted-foreground">
-                    Get instant answers to your investment questions through our WhatsApp support.
-                  </p>
-                  <Button 
-                    className="bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                    asChild
-                  >
-                    <a href="https://wa.me/923181300262" target="_blank" rel="noopener noreferrer">
-                      Chat on WhatsApp
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{method.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{method.description}</p>
+                  <p className="font-medium text-foreground mb-4">{method.contact}</p>
+                  <Button className="w-full" asChild>
+                    <a href={method.link} target="_blank" rel="noopener noreferrer">
+                      {method.action}
                     </a>
                   </Button>
                 </div>
-              </Card>
-              
-              <Card className="shadow-soft border-0 p-8">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-secondary to-primary flex items-center justify-center mx-auto">
-                    <CheckCircle className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">Ready to Start Investing?</h3>
+              </InteractiveCard>
+            ))}
+          </div>
+
+          {/* Quick Contact Form */}
+          <div className="max-w-2xl mx-auto">
+            <InteractiveCard>
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Send Us a Message</h3>
                   <p className="text-muted-foreground">
-                    Book your free consultation and take the first step towards building wealth.
+                    Fill out the form below and we'll get back to you within 24 hours
                   </p>
-                  <Button 
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  >
-                    Book Free Consultation
-                  </Button>
                 </div>
-              </Card>
+
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                        placeholder="Doe"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                      placeholder="+92 300 1234567"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                      Service Interest
+                    </label>
+                    <select
+                      id="service"
+                      className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                    >
+                      <option>Select a service...</option>
+                      <option>PSX Account Opening</option>
+                      <option>Investment Packages</option>
+                      <option>Portfolio Review</option>
+                      <option>Stock Research & Picks</option>
+                      <option>Educational Sessions</option>
+                      <option>Premium Advisory</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                      placeholder="Tell us about your investment goals and how we can help you..."
+                    ></textarea>
+                  </div>
+
+                  <Button type="submit" className="w-full">
+                    <Send className="h-4 w-4 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </div>
+            </InteractiveCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Information */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Office Details */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Our Office</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Address</h3>
+                    <p className="text-muted-foreground">
+                      Suite 401, Business Bay Tower<br />
+                      Main Shahrah-e-Faisal<br />
+                      Karachi, Sindh 75400<br />
+                      Pakistan
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-3">Office Hours</h3>
+                    <div className="space-y-2">
+                      {officeHours.map((schedule, index) => (
+                        <div key={index} className="flex justify-between">
+                          <span className="text-muted-foreground">{schedule.day}</span>
+                          <span className="font-medium text-foreground">{schedule.hours}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Regulatory Information</h3>
+                    <p className="text-muted-foreground">
+                      Licensed and regulated by the Securities and Exchange Commission of Pakistan (SECP)
+                    </p>
+                    <Badge variant="secondary" className="mt-2">
+                      License #: ISL-2019-001
+                    </Badge>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* FAQ Section */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Frequently Asked Questions</h2>
+              
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <InteractiveCard key={index}>
+                    <div className="p-6">
+                      <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
+                      <p className="text-muted-foreground text-sm">{faq.answer}</p>
+                    </div>
+                  </InteractiveCard>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Don't wait - start building your wealth through smart investing today.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button variant="secondary" size="lg">
+              Schedule Consultation
+            </Button>
+            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+              <a href="https://wa.me/923181300262?text=Hi! I'm ready to start my investment journey. Can you help me get started?" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4" />
+                <span>Start on WhatsApp</span>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
