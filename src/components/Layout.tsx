@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, MessageCircle, TrendingUp } from "lucide-react";
 import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import ThemeToggle from "./ThemeToggle";
+
 const Layout = ({
   children
 }: {
@@ -15,6 +17,7 @@ const Layout = ({
   
   // Automatically scroll to top on route change
   useScrollToTop();
+
   const navigation = [{
     name: "Home",
     href: "/"
@@ -31,8 +34,11 @@ const Layout = ({
     name: "Contact",
     href: "/contact"
   }];
+
   const isActive = (href: string) => location.pathname === href;
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -44,9 +50,17 @@ const Layout = ({
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {navigation.map(item => <Link key={item.name} to={item.href} className={`text-sm font-medium transition-colors hover:text-primary ${isActive(item.href) ? "text-primary" : "text-muted-foreground"}`}>
+              {navigation.map(item => (
+                <Link 
+                  key={item.name} 
+                  to={item.href} 
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(item.href) ? "text-primary" : "text-muted-foreground"
+                  }`}
+                >
                   {item.name}
-                </Link>)}
+                </Link>
+              ))}
             </nav>
 
             {/* Desktop CTA */}
@@ -72,9 +86,18 @@ const Layout = ({
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col space-y-4 mt-8">
-                  {navigation.map(item => <Link key={item.name} to={item.href} onClick={() => setIsOpen(false)} className={`text-lg font-medium transition-colors hover:text-primary ${isActive(item.href) ? "text-primary" : "text-muted-foreground"}`}>
+                  {navigation.map(item => (
+                    <Link 
+                      key={item.name} 
+                      to={item.href} 
+                      onClick={() => setIsOpen(false)} 
+                      className={`text-lg font-medium transition-colors hover:text-primary ${
+                        isActive(item.href) ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    >
                       {item.name}
-                    </Link>)}
+                    </Link>
+                  ))}
                   <div className="pt-4 space-y-3">
                     <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                       <a href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services. Can you help me get started with PSX investing?" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
@@ -144,6 +167,8 @@ const Layout = ({
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Layout;

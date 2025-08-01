@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,9 +21,9 @@ const Contact = () => {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Get instant responses to your queries",
-      value: "+92 300 1234567",
+      value: "+92 318 1300262",
       action: "Chat Now",
-      link: "https://wa.me/923001234567",
+      link: "https://wa.me/923181300262",
       primary: true
     },
     {
@@ -38,9 +39,9 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       description: "Call for urgent matters",
-      value: "+92 21 1234567",
+      value: "+92 318 1300262",
       action: "Call Now",
-      link: "tel:+922112345678",
+      link: "tel:+923181300262",
       primary: false
     }
   ];
@@ -188,7 +189,7 @@ const Contact = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" placeholder="+92 300 1234567" />
+                    <Input id="phone" placeholder="+92 318 1300262" />
                   </div>
                 </div>
 
@@ -264,7 +265,7 @@ const Contact = () => {
                     className="bg-gradient-to-r from-primary to-secondary hover:opacity-90"
                     asChild
                   >
-                    <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/923181300262" target="_blank" rel="noopener noreferrer">
                       Chat on WhatsApp
                     </a>
                   </Button>
