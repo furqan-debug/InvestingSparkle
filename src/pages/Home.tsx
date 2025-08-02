@@ -281,7 +281,7 @@ const Home = () => {
                   Schedule Consultation
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8 font-medium">
+              <Button size="lg" variant="outline" className="border-primary-foreground h-12 px-8 font-medium text-slate-950 bg-slate-50">
                 View Investment Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
