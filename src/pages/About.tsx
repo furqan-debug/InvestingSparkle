@@ -1,65 +1,57 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Users, TrendingUp, MessageCircle, Target, Eye, Heart } from "lucide-react";
 import InteractiveCard from "@/components/InteractiveCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
-
 const About = () => {
-  const stats = [
-    { number: "2000+", label: "Happy Investors" },
-    { number: "₨50M+", label: "Assets Under Management" },
-    { number: "5+", label: "Years Experience" },
-    { number: "95%", label: "Client Satisfaction" }
-  ];
-
-  const values = [
-    {
-      icon: Shield,
-      title: "Transparency",
-      description: "We believe in complete transparency in all our investment recommendations and processes."
-    },
-    {
-      icon: Heart,
-      title: "Ethics First",
-      description: "All our investment strategies are based on ethical principles and Shariah compliance."
-    },
-    {
-      icon: Target,
-      title: "Client-Focused",
-      description: "Your financial goals and risk tolerance drive every investment decision we make."
-    },
-    {
-      icon: TrendingUp,
-      title: "Long-term Growth",
-      description: "We focus on sustainable, long-term wealth creation rather than quick profits."
-    }
-  ];
-
-  const team = [
-    {
-      name: "Masab Bin Fakhar",
-      role: "Founder & Chief Investment Officer",
-      description: "4+ years experience in Pakistan's financial markets with a proven track record.",
-      certifications: ["CFA Level II", "Investment Advisory Certified"]
-    },
-    {
-      name: "Furqan Habib Siddiqui",
-      role: "Co-founder Investment Analyst",
-      description: "Expert in fundamental analysis with focus on emerging market opportunities.",
-      certifications: ["MBA Finance", "Technical Analysis Certified"]
-    },
-    {
-      name: "Ali Hassan",
-      role: "Portfolio Manager",
-      description: "Specializes in risk management and portfolio optimization strategies.",
-      certifications: ["FRM Certified", "Investment Management Certified"]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const stats = [{
+    number: "2000+",
+    label: "Happy Investors"
+  }, {
+    number: "₨50M+",
+    label: "Assets Under Management"
+  }, {
+    number: "5+",
+    label: "Years Experience"
+  }, {
+    number: "95%",
+    label: "Client Satisfaction"
+  }];
+  const values = [{
+    icon: Shield,
+    title: "Transparency",
+    description: "We believe in complete transparency in all our investment recommendations and processes."
+  }, {
+    icon: Heart,
+    title: "Ethics First",
+    description: "All our investment strategies are based on ethical principles and Shariah compliance."
+  }, {
+    icon: Target,
+    title: "Client-Focused",
+    description: "Your financial goals and risk tolerance drive every investment decision we make."
+  }, {
+    icon: TrendingUp,
+    title: "Long-term Growth",
+    description: "We focus on sustainable, long-term wealth creation rather than quick profits."
+  }];
+  const team = [{
+    name: "Muhammad Ahmad",
+    role: "Founder & Chief Investment Officer",
+    description: "10+ years experience in Pakistan's financial markets with a proven track record.",
+    certifications: ["CFA Level II", "Investment Advisory Certified"]
+  }, {
+    name: "Sarah Khan",
+    role: "Senior Investment Analyst",
+    description: "Expert in fundamental analysis with focus on emerging market opportunities.",
+    certifications: ["MBA Finance", "Technical Analysis Certified"]
+  }, {
+    name: "Ali Hassan",
+    role: "Portfolio Manager",
+    description: "Specializes in risk management and portfolio optimization strategies.",
+    certifications: ["FRM Certified", "Investment Management Certified"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/10 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,12 +79,10 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+            {stats.map((stat, index) => <div key={index} className="text-center">
                 <AnimatedCounter end={stat.number} />
                 <p className="text-muted-foreground mt-2">{stat.label}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -149,15 +139,13 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="text-center">
+            {values.map((value, index) => <div key={index} className="text-center">
                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <value.icon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{value.title}</h3>
                 <p className="text-muted-foreground text-sm">{value.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -167,8 +155,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">Meet Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <InteractiveCard key={index}>
+            {team.map((member, index) => <InteractiveCard key={index}>
                 <div className="p-6 text-center">
                   <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/60 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <Users className="h-12 w-12 text-primary-foreground" />
@@ -177,15 +164,12 @@ const About = () => {
                   <p className="text-primary font-medium mb-3">{member.role}</p>
                   <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
                   <div className="flex flex-wrap justify-center gap-2">
-                    {member.certifications.map((cert, certIndex) => (
-                      <Badge key={certIndex} variant="secondary" className="text-xs">
+                    {member.certifications.map((cert, certIndex) => <Badge key={certIndex} variant="secondary" className="text-xs">
                         {cert}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </div>
-              </InteractiveCard>
-            ))}
+              </InteractiveCard>)}
           </div>
         </div>
       </section>
@@ -231,13 +215,11 @@ const About = () => {
           <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
             <a href="https://wa.me/923181300262?text=Hi! I'm interested in learning more about Investing Sparkle and how to get started." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
               <MessageCircle className="h-4 w-4" />
-              <span>Contact Us</span>
+              <span className="text-[#0830ad]">Contact Us</span>
             </a>
           </Button>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
