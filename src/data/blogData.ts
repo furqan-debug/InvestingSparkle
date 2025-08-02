@@ -1,4 +1,3 @@
-
 export interface BlogPost {
   id: string;
   title: string;
@@ -30,9 +29,9 @@ The Pakistan Stock Exchange (PSX) has demonstrated exceptional performance in th
 The KSE-100 index has gained over 15% in the past quarter, outperforming many regional markets. Several factors have contributed to this remarkable performance:
 
 ### Banking Sector Leadership
-- **Habib Bank Limited (HBL)** reported a 22% increase in quarterly profits
-- **United Bank Limited (UBL)** showed strong credit growth of 18%
-- **MCB Bank** maintained its position as a market leader with consistent dividend payouts
+- Habib Bank Limited (HBL) reported a 22% increase in quarterly profits
+- United Bank Limited (UBL) showed strong credit growth of 18%
+- MCB Bank maintained its position as a market leader with consistent dividend payouts
 
 ### Foreign Investment Inflow
 International investors have shown renewed interest in Pakistani equities, with foreign direct investment increasing by 12% compared to the previous quarter.
@@ -47,17 +46,17 @@ The banking sector continues to be the primary driver of market growth. Key fact
 
 ### Technology Sector Emergence
 Pakistani technology companies are gaining traction:
-- **TRG Pakistan** showing consistent growth in IT services
-- **Systems Limited** expanding international operations
-- **NetSol Technologies** securing major contracts
+- TRG Pakistan showing consistent growth in IT services
+- Systems Limited expanding international operations
+- NetSol Technologies securing major contracts
 
 ## Investment Recommendations
 
 For retail investors looking to capitalize on this momentum:
 
-1. **Diversified Portfolio Approach**: Consider blue-chip stocks across different sectors
-2. **Long-term Investment Strategy**: Focus on companies with strong fundamentals
-3. **Risk Management**: Implement proper stop-loss mechanisms
+1. Diversified Portfolio Approach: Consider blue-chip stocks across different sectors
+2. Long-term Investment Strategy: Focus on companies with strong fundamentals
+3. Risk Management: Implement proper stop-loss mechanisms
 
 ## Market Outlook
 
@@ -76,7 +75,7 @@ The Pakistan Stock Exchange's recent performance underscores the potential for s
     date: "December 15, 2024",
     readTime: "8 min read",
     author: "Muhammad Ahmad",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&auto=format",
     slug: "pakistan-stock-exchange-new-heights-kse100-analysis",
     tags: ["KSE-100", "Banking", "Investment", "Market Analysis"],
     metaDescription: "Complete analysis of Pakistan Stock Exchange KSE-100 index performance in Q4 2024, banking sector growth, and investment opportunities.",
@@ -103,31 +102,31 @@ Blue chip stocks are characterized by:
 ## Our Top 5 Blue Chip Picks
 
 ### 1. Habib Bank Limited (HBL)
-**Ticker: HBL**
+Ticker: HBL
 - Market Cap: PKR 285 billion
 - Dividend Yield: 8.5%
 - Why we like it: Largest private bank with strong international presence
 
 ### 2. Lucky Cement Limited
-**Ticker: LUCK**
+Ticker: LUCK
 - Market Cap: PKR 195 billion
 - Dividend Yield: 6.2%
 - Why we like it: Market leader in cement industry with CPEC benefits
 
 ### 3. Oil & Gas Development Company (OGDC)
-**Ticker: OGDC**
+Ticker: OGDC
 - Market Cap: PKR 320 billion
 - Dividend Yield: 12.8%
 - Why we like it: Largest exploration company with government backing
 
 ### 4. Engro Corporation Limited
-**Ticker: ENGRO**
+Ticker: ENGRO
 - Market Cap: PKR 125 billion
 - Dividend Yield: 5.8%
 - Why we like it: Diversified conglomerate with strong growth prospects
 
 ### 5. Pakistan Tobacco Company (PTC)
-**Ticker: PTC**
+Ticker: PTC
 - Market Cap: PKR 89 billion
 - Dividend Yield: 15.2%
 - Why we like it: Consistent cash flow and high dividend yields
@@ -135,9 +134,9 @@ Blue chip stocks are characterized by:
 ## Investment Strategy
 
 When investing in blue chip stocks:
-- **Dollar-cost averaging**: Invest fixed amounts regularly
-- **Dividend reinvestment**: Compound your returns
-- **Long-term focus**: Hold for 5+ years minimum
+- Dollar-cost averaging: Invest fixed amounts regularly
+- Dividend reinvestment: Compound your returns
+- Long-term focus: Hold for 5+ years minimum
 
 ## Risk Considerations
 
@@ -155,7 +154,7 @@ Blue chip stocks form the foundation of wealth creation in the Pakistan Stock Ex
     date: "December 12, 2024",
     readTime: "6 min read",
     author: "Sarah Khan",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&auto=format",
     slug: "top-5-blue-chip-stocks-pakistan-long-term-investment",
     tags: ["Blue Chip", "Long-term Investment", "Dividends", "PSX"],
     metaDescription: "Comprehensive guide to Pakistan's top 5 blue chip stocks for long-term investment, including HBL, LUCK, OGDC, ENGRO, and PTC analysis.",
@@ -173,9 +172,9 @@ For Muslim investors, ensuring investments align with Islamic principles is para
 ## Understanding Shariah Compliance
 
 ### Key Principles
-- **Prohibition of Riba (Interest)**: No involvement in interest-based transactions
-- **No Gharar (Excessive Uncertainty)**: Avoid highly speculative investments
-- **Halal Business Activities**: Companies must operate in permissible sectors
+- Prohibition of Riba (Interest): No involvement in interest-based transactions
+- No Gharar (Excessive Uncertainty): Avoid highly speculative investments
+- Halal Business Activities: Companies must operate in permissible sectors
 
 ### Prohibited Sectors
 - Conventional banking and insurance
@@ -186,26 +185,26 @@ For Muslim investors, ensuring investments align with Islamic principles is para
 ## Shariah-Compliant Stock Categories
 
 ### 1. Industrial Sector
-- **Fauji Fertilizer Company (FFC)**: Agricultural chemicals
-- **Pakistan State Oil (PSO)**: Energy distribution
-- **Packages Limited**: Food packaging
+- Fauji Fertilizer Company (FFC): Agricultural chemicals
+- Pakistan State Oil (PSO): Energy distribution
+- Packages Limited: Food packaging
 
 ### 2. Textile Sector
-- **Nishat Mills**: Cotton textiles
-- **Gul Ahmed Textile Mills**: Diversified textiles
-- **Kohinoor Textile Mills**: Yarn and fabric
+- Nishat Mills: Cotton textiles
+- Gul Ahmed Textile Mills: Diversified textiles
+- Kohinoor Textile Mills: Yarn and fabric
 
 ### 3. Technology Sector
-- **Systems Limited**: IT services
-- **TRG Pakistan**: Software development
-- **NetSol Technologies**: Financial software
+- Systems Limited: IT services
+- TRG Pakistan: Software development
+- NetSol Technologies: Financial software
 
 ## Shariah Screening Process
 
 ### Financial Ratios Check
-1. **Debt-to-Market Cap**: Should be less than 33%
-2. **Interest Income**: Should be less than 5% of total income
-3. **Cash and Interest-bearing Securities**: Should be less than 33%
+1. Debt-to-Market Cap: Should be less than 33%
+2. Interest Income: Should be less than 5% of total income
+3. Cash and Interest-bearing Securities: Should be less than 33%
 
 ### Business Activity Screening
 - Primary business must be halal
@@ -229,14 +228,14 @@ If a company has minor non-compliant income:
 ## Recommended Shariah-Compliant Stocks
 
 ### High Growth Potential
-1. **Lucky Cement** (LUCK)
-2. **Fauji Fertilizer** (FFC)
-3. **Systems Limited** (SYS)
+1. Lucky Cement (LUCK)
+2. Fauji Fertilizer (FFC)
+3. Systems Limited (SYS)
 
 ### Dividend Focused
-1. **Nishat Mills** (NML)
-2. **Packages Limited** (PKGS)
-3. **PSO** (PSO)
+1. Nishat Mills (NML)
+2. Packages Limited (PKGS)
+3. PSO (PSO)
 
 ## Working with Shariah Advisors
 
@@ -253,7 +252,7 @@ Shariah-compliant investing in PSX offers numerous opportunities for Muslim inve
     date: "December 10, 2024",
     readTime: "7 min read",
     author: "Dr. Ahmed Malik",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=400&fit=crop&auto=format",
     slug: "shariah-compliant-investment-guide-pakistani-muslims",
     tags: ["Shariah Compliant", "Islamic Finance", "Halal Investment", "Muslim Investors"],
     metaDescription: "Complete guide to Shariah-compliant investing in Pakistan Stock Exchange for Muslim investors, including halal stock screening and portfolio building.",
@@ -278,21 +277,21 @@ Market volatility is an inevitable part of investing. Understanding how to navig
 - Sector-specific news
 
 ### Types of Market Volatility
-1. **Systematic Risk**: Affects entire market
-2. **Unsystematic Risk**: Company or sector specific
-3. **Seasonal Volatility**: Predictable patterns
-4. **Event-driven Volatility**: Sudden market shocks
+1. Systematic Risk: Affects entire market
+2. Unsystematic Risk: Company or sector specific
+3. Seasonal Volatility: Predictable patterns
+4. Event-driven Volatility: Sudden market shocks
 
 ## Risk Management Strategies
 
 ### 1. Diversification
-**Asset Class Diversification**
+Asset Class Diversification
 - Stocks: 60-70%
 - Bonds: 15-20%
 - Commodities: 10-15%
 - Cash: 5-10%
 
-**Sector Diversification**
+Sector Diversification
 - Banking: 25%
 - Industrial: 20%
 - Technology: 15%
@@ -306,12 +305,12 @@ Market volatility is an inevitable part of investing. Understanding how to navig
 - Maintain adequate cash reserves
 
 ### 3. Stop-Loss Orders
-**Trailing Stop-Loss**
+Trailing Stop-Loss
 - Set at 10-15% below current price
 - Automatically adjusts as price rises
 - Protects gains while limiting losses
 
-**Fixed Stop-Loss**
+Fixed Stop-Loss
 - Set at specific price level
 - Useful for highly volatile stocks
 - Requires regular monitoring
@@ -341,22 +340,22 @@ Consider investments in:
 ## Behavioral Finance Considerations
 
 ### Emotional Pitfalls to Avoid
-1. **Panic Selling**: Selling at market lows
-2. **FOMO (Fear of Missing Out)**: Buying at peaks
-3. **Overconfidence**: Ignoring risk management
-4. **Herd Mentality**: Following crowd behavior
+1. Panic Selling: Selling at market lows
+2. FOMO (Fear of Missing Out): Buying at peaks
+3. Overconfidence: Ignoring risk management
+4. Herd Mentality: Following crowd behavior
 
 ### Psychological Strategies
-- **Dollar-Cost Averaging**: Regular investments regardless of market conditions
-- **Rebalancing**: Maintaining target asset allocation
-- **Long-term Focus**: Ignoring short-term noise
+- Dollar-Cost Averaging: Regular investments regardless of market conditions
+- Rebalancing: Maintaining target asset allocation
+- Long-term Focus: Ignoring short-term noise
 
 ## Portfolio Protection Tools
 
 ### 1. Hedging Strategies
-- **Put Options**: Insurance against downside
-- **Covered Calls**: Generate income during sideways markets
-- **Futures Contracts**: Hedge specific positions
+- Put Options: Insurance against downside
+- Covered Calls: Generate income during sideways markets
+- Futures Contracts: Hedge specific positions
 
 ### 2. Cash Management
 - Maintain 6-12 months emergency fund
@@ -402,7 +401,7 @@ Remember: volatility is the price of admission to superior long-term returns. Th
     date: "December 8, 2024",
     readTime: "9 min read",
     author: "Ali Hassan",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=400&fit=crop&auto=format",
     slug: "market-volatility-portfolio-protection-strategies",
     tags: ["Risk Management", "Portfolio Protection", "Market Volatility", "Investment Strategy"],
     metaDescription: "Comprehensive guide to protecting your investment portfolio during market volatility with proven risk management strategies and defensive investment approaches.",

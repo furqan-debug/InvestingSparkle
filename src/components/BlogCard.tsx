@@ -18,28 +18,27 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
       <InteractiveCard className="overflow-hidden">
         <div className="md:flex">
           <div className="md:w-1/2">
-            <div className="h-64 md:h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+            <div className="h-64 md:h-full relative overflow-hidden">
               <img 
                 src={post.image} 
                 alt={post.title}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.nextElementSibling?.classList.remove('hidden');
+                  target.src = "/placeholder.svg";
                 }}
               />
-              <div className="hidden h-16 w-16 text-primary">📊</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
           <div className="md:w-1/2 p-8">
             <Badge variant="default" className="mb-4">
               Featured Article
             </Badge>
-            <h2 className="text-2xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl font-bold text-foreground mb-4 hover:text-primary transition-colors">
               {post.title}
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               {post.excerpt}
             </p>
             <div className="flex items-center justify-between text-sm text-muted-foreground mb-6">
@@ -71,16 +70,29 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
   }
 
   return (
-    <InteractiveCard className="h-full">
+    <InteractiveCard className="h-full overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={post.image} 
+          alt={post.title}
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/placeholder.svg";
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <Badge variant="outline" className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm">
+          {post.category}
+        </Badge>
+      </div>
+      
       <div className="p-6 flex flex-col h-full">
-        <div className="mb-4">
-          <Badge variant="outline" className="mb-3">
-            {post.category}
-          </Badge>
-          <h3 className="text-xl font-semibold text-foreground mb-3 line-clamp-2">
+        <div className="mb-4 flex-grow">
+          <h3 className="text-xl font-semibold text-foreground mb-3 line-clamp-2 hover:text-primary transition-colors">
             {post.title}
           </h3>
-          <p className="text-muted-foreground text-sm line-clamp-3 flex-grow">
+          <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
             {post.excerpt}
           </p>
         </div>
@@ -103,10 +115,10 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
             </div>
           </div>
           
-          <Button variant="outline" className="w-full" asChild>
+          <Button variant="outline" className="w-full group" asChild>
             <Link to={`/blog/${post.slug}`}>
               Read More
-              <ArrowRight className="h-4 w-4 ml-2" />
+              <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>

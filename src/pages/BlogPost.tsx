@@ -182,19 +182,16 @@ const BlogPost = () => {
                         return `<h${level} class="text-${4-level}xl font-bold text-foreground mt-8 mb-4">${text}</h${level}>`;
                       }
                       if (paragraph.startsWith('- ')) {
-                        return `<ul class="list-disc ml-6 space-y-2">${paragraph.split('\n').map(item => 
+                        return `<ul class="list-disc ml-6 space-y-2 mb-6">${paragraph.split('\n').map(item => 
                           item.startsWith('- ') ? `<li class="text-muted-foreground">${item.substring(2)}</li>` : ''
                         ).join('')}</ul>`;
                       }
                       if (paragraph.match(/^\d+\./)) {
-                        return `<ol class="list-decimal ml-6 space-y-2">${paragraph.split('\n').map(item => 
+                        return `<ol class="list-decimal ml-6 space-y-2 mb-6">${paragraph.split('\n').map(item => 
                           item.match(/^\d+\./) ? `<li class="text-muted-foreground">${item.replace(/^\d+\.\s*/, '')}</li>` : ''
                         ).join('')}</ol>`;
                       }
-                      if (paragraph.includes('**')) {
-                        return `<p class="mb-4">${paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')}</p>`;
-                      }
-                      return paragraph.trim() ? `<p class="mb-4 text-muted-foreground">${paragraph}</p>` : '';
+                      return paragraph.trim() ? `<p class="mb-4 text-muted-foreground leading-relaxed">${paragraph}</p>` : '';
                     })
                     .join('')
                 }}
