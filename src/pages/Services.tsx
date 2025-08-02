@@ -10,7 +10,7 @@ const Services = () => {
     {
       title: "PSX Account Opening",
       description: "Complete assistance in opening your Pakistan Stock Exchange trading account with verified brokers.",
-      price: "Free Consultation",
+      price: "PKR 2,400",
       features: [
         "Broker comparison and selection",
         "Documentation assistance",
