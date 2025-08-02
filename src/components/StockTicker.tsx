@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
@@ -26,8 +27,8 @@ const StockTicker = () => {
     const interval = setInterval(() => {
       setStocks(prevStocks => 
         prevStocks.map(stock => {
-          const randomChange = (Math.random() - 0.5) * 2; // Smaller, more realistic changes
-          const newPrice = Math.max(stock.price + randomChange, stock.price * 0.95); // More realistic floor
+          const randomChange = (Math.random() - 0.5) * 2;
+          const newPrice = Math.max(stock.price + randomChange, stock.price * 0.95);
           const change = newPrice - stock.price;
           const changePercent = (change / stock.price) * 100;
           
@@ -39,30 +40,33 @@ const StockTicker = () => {
           };
         })
       );
-    }, 8000); // Less frequent updates
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="bg-card/30 backdrop-blur-md border border-border/50 rounded-xl p-4 overflow-hidden">
+    <div className="bg-card border border-border rounded-lg p-4 overflow-hidden shadow-sm">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-foreground">PSX Live</h3>
-        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        <h3 className="text-lg font-semibold text-foreground">PSX Live Market Data</h3>
+        <div className="flex items-center space-x-2">
+          <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+          <span className="text-sm text-muted-foreground">Live</span>
+        </div>
       </div>
       
       <div className="relative">
         <div className="flex animate-scroll-x space-x-8 whitespace-nowrap">
           {[...stocks, ...stocks].map((stock, index) => (
-            <div key={`${stock.symbol}-${index}`} className="flex items-center space-x-3 min-w-max">
+            <div key={`${stock.symbol}-${index}`} className="flex items-center space-x-4 min-w-max p-3 bg-secondary/30 rounded-md">
               <div className="text-sm">
                 <div className="font-semibold text-foreground">{stock.symbol}</div>
-                <div className="text-xs text-muted-foreground truncate max-w-24">{stock.name}</div>
+                <div className="text-xs text-muted-foreground truncate max-w-32">{stock.name}</div>
               </div>
               <div className="text-right">
-                <div className="font-bold text-foreground">PKR {stock.price}</div>
-                <div className={`flex items-center text-xs ${
-                  stock.change >= 0 ? 'text-green-500' : 'text-red-500'
+                <div className="font-bold text-foreground">PKR {stock.price.toLocaleString()}</div>
+                <div className={`flex items-center text-xs font-medium ${
+                  stock.change >= 0 ? 'text-success' : 'text-destructive'
                 }`}>
                   {stock.change >= 0 ? 
                     <TrendingUp className="w-3 h-3 mr-1" /> : 

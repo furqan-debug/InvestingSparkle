@@ -36,11 +36,11 @@ const InvestmentCalculator = () => {
       totalReturns: Math.round(totalReturns)
     });
 
-    // Show success notification for significant returns
+    // Show professional success notification for significant returns
     if (totalReturns > 1000000) {
       toast({
         title: "Excellent Investment Potential",
-        description: "Your projected returns show strong growth potential over the investment period.",
+        description: "Your projected returns demonstrate strong long-term growth potential with consistent investing.",
       });
     }
   };
