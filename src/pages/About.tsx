@@ -39,14 +39,14 @@ const About = () => {
 
   const team = [
     {
-      name: "Muhammad Ahmad",
+      name: "Masab Bin Fakhar",
       role: "Founder & Chief Investment Officer",
-      description: "10+ years experience in Pakistan's financial markets with a proven track record.",
+      description: "4+ years experience in Pakistan's financial markets with a proven track record.",
       certifications: ["CFA Level II", "Investment Advisory Certified"]
     },
     {
-      name: "Sarah Khan",
-      role: "Senior Investment Analyst",
+      name: "Furqan Habib Siddiqui",
+      role: "Co-founder Investment Analyst",
       description: "Expert in fundamental analysis with focus on emerging market opportunities.",
       certifications: ["MBA Finance", "Technical Analysis Certified"]
     },
