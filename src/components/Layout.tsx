@@ -163,7 +163,7 @@ const Layout = ({
           </div>
           
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Investing Sparkle. All rights reserved. | Regulated by SECP</p>
+            <p>&copy; 2024 Investing Sparkle. All rights reserved.</p>
           </div>
         </div>
       </footer>
