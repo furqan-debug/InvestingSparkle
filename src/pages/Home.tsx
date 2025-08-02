@@ -186,7 +186,7 @@ const Home = () => {
               </p>
               
               <div className="space-y-4">
-                {["100% Shariah-compliant investment strategies", "Comprehensive PSX account opening assistance", "Structured programs for beginner investors", "Regular market analysis and research reports", "Premium advisory services and support"].map((benefit, index) => <div key={index} className="flex items-start space-x-3">
+                {["SECP regulated and compliant investment advisory", "100% Shariah-compliant investment strategies", "Comprehensive PSX account opening assistance", "Structured programs for beginner investors", "Regular market analysis and research reports", "Premium advisory services and support"].map((benefit, index) => <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-foreground mx-[12px]">{benefit}</span>
                   </div>)}
@@ -288,9 +288,7 @@ const Home = () => {
             </div>
             
             <div className="pt-8 border-t border-primary-foreground/20">
-              <p className="text-sm opacity-75">
-                SECP Regulated • Shariah Compliant • Professional Advisory Services
-              </p>
+              <p className="text-sm opacity-75">Shariah Compliant • Professional Advisory Services</p>
             </div>
           </div>
         </div>
