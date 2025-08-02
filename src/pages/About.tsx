@@ -42,7 +42,7 @@ const About = () => {
       name: "Muhammad Ahmad",
       role: "Founder & Chief Investment Officer",
       description: "10+ years experience in Pakistan's financial markets with a proven track record.",
-      certifications: ["CFA Level II", "SECP Certified"]
+      certifications: ["CFA Level II", "Investment Advisory Certified"]
     },
     {
       name: "Sarah Khan",
@@ -54,7 +54,7 @@ const About = () => {
       name: "Ali Hassan",
       role: "Portfolio Manager",
       description: "Specializes in risk management and portfolio optimization strategies.",
-      certifications: ["FRM Certified", "SECP Registered"]
+      certifications: ["FRM Certified", "Investment Management Certified"]
     }
   ];
 
@@ -190,28 +190,28 @@ const About = () => {
         </div>
       </section>
 
-      {/* Regulatory Information */}
+      {/* Trust & Security */}
       <section className="py-16 bg-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-foreground mb-6">Regulated & Compliant</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">Trusted & Secure</h2>
             <p className="text-muted-foreground mb-8">
-              Investing Sparkle operates under the supervision of the Securities and Exchange Commission of Pakistan (SECP). 
-              We maintain the highest standards of compliance and ethical conduct in all our operations.
+              We maintain the highest standards of security and ethical conduct in all our operations. 
+              Your trust is our most valuable asset, and we work hard to earn and maintain it every day.
             </p>
             <div className="flex justify-center space-x-8">
               <div className="text-center">
-                <Award className="h-8 w-8 text-primary mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">SECP Registered</p>
+                <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">Secure Platform</p>
               </div>
               <div className="text-center">
-                <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Fully Compliant</p>
+                <Heart className="h-8 w-8 text-primary mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">Ethical Practices</p>
               </div>
               <div className="text-center">
                 <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Audited Annually</p>
+                <p className="text-sm text-muted-foreground">Proven Results</p>
               </div>
             </div>
           </div>

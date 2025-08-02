@@ -246,13 +246,10 @@ const Contact = () => {
                 <div className="flex items-start space-x-4">
                   <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Regulatory Information</h3>
+                    <h3 className="font-semibold text-foreground mb-1">Our Commitment</h3>
                     <p className="text-muted-foreground">
-                      Licensed and regulated by the Securities and Exchange Commission of Pakistan (SECP)
+                      We are committed to providing transparent, ethical, and professional investment advisory services to all our clients.
                     </p>
-                    <Badge variant="secondary" className="mt-2">
-                      License #: ISL-2019-001
-                    </Badge>
                   </div>
                 </div>
               </div>
