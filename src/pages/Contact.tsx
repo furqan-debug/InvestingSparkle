@@ -1,10 +1,10 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Shield } from "lucide-react";
 import InteractiveCard from "@/components/InteractiveCard";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +27,14 @@ const Contact = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log("Form submitted with data:", formData);
+    
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      toast.error("Please fill in all required fields (First Name, Last Name, and Email)");
+      return;
+    }
+
     const emailSubject = `New Inquiry from ${formData.firstName} ${formData.lastName}`;
     const emailBody = `Hello Investing Sparkle Team,
 
@@ -34,11 +42,11 @@ I am reaching out regarding your investment services. Please find my details bel
 
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
-Phone: ${formData.phone}
-Service Interest: ${formData.service}
+Phone: ${formData.phone || 'Not provided'}
+Service Interest: ${formData.service || 'Not specified'}
 
 Message:
-${formData.message}
+${formData.message || 'No additional message provided'}
 
 I look forward to hearing from you soon.
 
@@ -46,7 +54,32 @@ Best regards,
 ${formData.firstName} ${formData.lastName}`;
 
     const mailtoUrl = `mailto:support@investingsparkle.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoUrl;
+    
+    console.log("Opening email client with URL:", mailtoUrl);
+    
+    try {
+      // Try to open the email client
+      window.location.href = mailtoUrl;
+      
+      // Show success message
+      toast.success("Opening your email client with pre-filled message!");
+      
+      // Clear form after successful submission
+      setTimeout(() => {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }, 1000);
+      
+    } catch (error) {
+      console.error("Error opening email client:", error);
+      toast.error("Could not open email client. Please contact us directly at support@investingsparkle.com");
+    }
   };
 
   const contactMethods = [
@@ -162,7 +195,7 @@ ${formData.firstName} ${formData.lastName}`;
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                        First Name
+                        First Name *
                       </label>
                       <input
                         type="text"
@@ -177,7 +210,7 @@ ${formData.firstName} ${formData.lastName}`;
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                        Last Name
+                        Last Name *
                       </label>
                       <input
                         type="text"
@@ -194,7 +227,7 @@ ${formData.firstName} ${formData.lastName}`;
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
