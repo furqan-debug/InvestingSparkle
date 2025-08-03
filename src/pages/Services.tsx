@@ -1,92 +1,52 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Shield, TrendingUp, Users, MessageCircle, BarChart3, BookOpen, HeadphonesIcon } from "lucide-react";
 import InteractiveCard from "@/components/InteractiveCard";
-
 const Services = () => {
-  const services = [
-    {
-      title: "PSX Account Opening",
-      description: "Complete assistance in opening your Pakistan Stock Exchange trading account with verified brokers.",
-      price: "PKR 2,400",
-      features: [
-        "Broker comparison and selection",
-        "Documentation assistance",
-        "Account verification support",
-        "Initial setup guidance"
-      ],
-      icon: Users,
-      popular: false
-    },
-    {
-      title: "Investment Packages",
-      description: "Curated investment portfolios designed for different risk appetites and financial goals.",
-      price: "Starting from PKR 50,000",
-      features: [
-        "Diversified stock selection",
-        "Risk-adjusted portfolios",
-        "Monthly performance reports",
-        "Rebalancing recommendations"
-      ],
-      icon: BarChart3,
-      popular: true
-    },
-    {
-      title: "Portfolio Review",
-      description: "Comprehensive analysis of your existing investments with actionable recommendations.",
-      price: "PKR 5,000",
-      features: [
-        "Complete portfolio analysis",
-        "Risk assessment",
-        "Performance evaluation",
-        "Strategic recommendations"
-      ],
-      icon: TrendingUp,
-      popular: false
-    },
-    {
-      title: "Stock Research & Picks",
-      description: "Weekly stock recommendations based on fundamental and technical analysis.",
-      price: "PKR 15,000/month",
-      features: [
-        "Weekly stock picks",
-        "Detailed analysis reports",
-        "Entry and exit strategies",
-        "Risk management guidelines"
-      ],
-      icon: BookOpen,
-      popular: false
-    },
-    {
-      title: "Educational Sessions",
-      description: "Learn the fundamentals of stock market investing through structured sessions.",
-      price: "PKR 25,000",
-      features: [
-        "Market fundamentals training",
-        "Technical analysis basics",
-        "Risk management strategies",
-        "Live trading demonstrations"
-      ],
-      icon: HeadphonesIcon,
-      popular: false
-    },
-    {
-      title: "Premium Advisory",
-      description: "Comprehensive investment advisory service with dedicated support.",
-      price: "PKR 50,000/month",
-      features: [
-        "Personalized investment strategy",
-        "Direct WhatsApp support",
-        "Weekly portfolio reviews",
-        "Priority market updates"
-      ],
-      icon: Shield,
-      popular: false
-    }
-  ];
-
+  const services = [{
+    title: "PSX Account Opening",
+    description: "Complete assistance in opening your Pakistan Stock Exchange trading account with verified brokers.",
+    price: "PKR 2,400",
+    features: ["Broker comparison and selection", "Documentation assistance", "Account verification support", "Initial setup guidance"],
+    icon: Users,
+    popular: false
+  }, {
+    title: "Investment Packages",
+    description: "Curated investment portfolios designed for different risk appetites and financial goals.",
+    price: "Starting from PKR 50,000",
+    features: ["Diversified stock selection", "Risk-adjusted portfolios", "Monthly performance reports", "Rebalancing recommendations"],
+    icon: BarChart3,
+    popular: true
+  }, {
+    title: "Portfolio Review",
+    description: "Comprehensive analysis of your existing investments with actionable recommendations.",
+    price: "PKR 5,000",
+    features: ["Complete portfolio analysis", "Risk assessment", "Performance evaluation", "Strategic recommendations"],
+    icon: TrendingUp,
+    popular: false
+  }, {
+    title: "Stock Research & Picks",
+    description: "Weekly stock recommendations based on fundamental and technical analysis.",
+    price: "PKR 15,000/month",
+    features: ["Weekly stock picks", "Detailed analysis reports", "Entry and exit strategies", "Risk management guidelines"],
+    icon: BookOpen,
+    popular: false
+  }, {
+    title: "Educational Sessions",
+    description: "Learn the fundamentals of stock market investing through structured sessions.",
+    price: "PKR 25,000",
+    features: ["Market fundamentals training", "Technical analysis basics", "Risk management strategies", "Live trading demonstrations"],
+    icon: HeadphonesIcon,
+    popular: false
+  }, {
+    title: "Premium Advisory",
+    description: "Comprehensive investment advisory service with dedicated support.",
+    price: "PKR 50,000/month",
+    features: ["Personalized investment strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority market updates"],
+    icon: Shield,
+    popular: false
+  }];
   const handleServiceSelect = (service: typeof services[0]) => {
     const message = `Hi! I'm interested in your "${service.title}" service.
 
@@ -98,13 +58,10 @@ Features included:
 ${service.features.map(feature => `• ${feature}`).join('\n')}
 
 I would like to know more about this service and how to get started.`;
-
     const whatsappUrl = `https://wa.me/923181300262?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/10 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,16 +96,13 @@ I would like to know more about this service and how to get started.`;
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <InteractiveCard key={index} className="h-full">
+            {services.map((service, index) => <InteractiveCard key={index} className="h-full">
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-center justify-between mb-4">
                     <service.icon className="h-8 w-8 text-primary" />
-                    {service.popular && (
-                      <Badge variant="default" className="bg-primary text-primary-foreground">
+                    {service.popular && <Badge variant="default" className="bg-primary text-primary-foreground">
                         Most Popular
-                      </Badge>
-                    )}
+                      </Badge>}
                   </div>
                   
                   <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
@@ -159,23 +113,17 @@ I would like to know more about this service and how to get started.`;
                   </div>
                   
                   <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-success mr-2 flex-shrink-0" />
                         {feature}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   
-                  <Button 
-                    className="w-full mt-auto" 
-                    onClick={() => handleServiceSelect(service)}
-                  >
+                  <Button className="w-full mt-auto" onClick={() => handleServiceSelect(service)}>
                     Choose This Service
                   </Button>
                 </div>
-              </InteractiveCard>
-            ))}
+              </InteractiveCard>)}
           </div>
         </div>
       </section>
@@ -238,14 +186,12 @@ I would like to know more about this service and how to get started.`;
             <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
               <a href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services and would like to get started." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
                 <MessageCircle className="h-4 w-4" />
-                <span>Contact Us</span>
+                <span className="text-gray-700">Contact Us</span>
               </a>
             </Button>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
