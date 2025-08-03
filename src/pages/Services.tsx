@@ -87,6 +87,22 @@ const Services = () => {
     }
   ];
 
+  const handleServiceSelect = (service: typeof services[0]) => {
+    const message = `Hi! I'm interested in your "${service.title}" service.
+
+Service Details:
+- Price: ${service.price}
+- Description: ${service.description}
+
+Features included:
+${service.features.map(feature => `• ${feature}`).join('\n')}
+
+I would like to know more about this service and how to get started.`;
+
+    const whatsappUrl = `https://wa.me/923181300262?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -151,7 +167,10 @@ const Services = () => {
                     ))}
                   </ul>
                   
-                  <Button className="w-full mt-auto">
+                  <Button 
+                    className="w-full mt-auto" 
+                    onClick={() => handleServiceSelect(service)}
+                  >
                     Choose This Service
                   </Button>
                 </div>
@@ -176,9 +195,9 @@ const Services = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">SECP Regulated</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Professional Service</h3>
               <p className="text-muted-foreground">
-                We operate under the regulations of Securities and Exchange Commission of Pakistan
+                We provide expert investment guidance with years of market experience
               </p>
             </div>
 
