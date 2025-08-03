@@ -1,5 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/investingsparkle/public_html
-    - /bin/rm -rf $DEPLOYPATH/*
-    - /bin/cp -r dist/* $DEPLOYPATH
+    - export NODE_ENV=production
+    - npm install
+    - npm run build
+    - cp -r dist/* public_html/
