@@ -57,31 +57,12 @@ ${formData.firstName} ${formData.lastName}`;
     
     console.log("Opening email client with URL:", mailtoUrl);
     
-    // Try to copy to clipboard as backup
-    const emailContent = `To: support@investingsparkle.com\nSubject: ${emailSubject}\n\n${emailBody}`;
-    
     try {
-      // Try to copy to clipboard first
-      navigator.clipboard.writeText(emailContent).then(() => {
-        console.log("Email content copied to clipboard");
-      }).catch(() => {
-        console.log("Could not copy to clipboard");
-      });
+      // Use window.location.href instead of window.open to avoid blank page
+      window.location.href = mailtoUrl;
       
-      // Try to open the email client
-      const mailtoWindow = window.open(mailtoUrl, '_blank');
-      
-      // Check if the mailto worked
-      if (!mailtoWindow || mailtoWindow.closed || typeof mailtoWindow.closed === 'undefined') {
-        // Fallback: show the user what to do
-        toast.error(
-          "Could not open email client. The email content has been copied to your clipboard. Please paste it into your email application and send to support@investingsparkle.com",
-          { duration: 8000 }
-        );
-      } else {
-        // Show success message
-        toast.success("Opening your email client with pre-filled message!");
-      }
+      // Show success message
+      toast.success("Opening your email client with pre-filled message!");
       
       // Clear form after successful submission
       setTimeout(() => {
@@ -97,7 +78,7 @@ ${formData.firstName} ${formData.lastName}`;
       
     } catch (error) {
       console.error("Error opening email client:", error);
-      toast.error("Could not open email client. Please contact us directly at support@investingsparkle.com or copy the details manually.");
+      toast.error("Could not open email client. Please contact us directly at support@investingsparkle.com");
     }
   };
 
