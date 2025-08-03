@@ -4,8 +4,51 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Shield } from "lucide-react";
 import InteractiveCard from "@/components/InteractiveCard";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const emailSubject = `New Inquiry from ${formData.firstName} ${formData.lastName}`;
+    const emailBody = `Hello Investing Sparkle Team,
+
+I am reaching out regarding your investment services. Please find my details below:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service Interest: ${formData.service}
+
+Message:
+${formData.message}
+
+I look forward to hearing from you soon.
+
+Best regards,
+${formData.firstName} ${formData.lastName}`;
+
+    const mailtoUrl = `mailto:support@investingsparkle.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoUrl;
+  };
+
   const contactMethods = [
     {
       icon: MessageCircle,
@@ -115,7 +158,7 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <form className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -124,6 +167,10 @@ const Contact = () => {
                       <input
                         type="text"
                         id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        required
                         className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                         placeholder="John"
                       />
@@ -135,6 +182,10 @@ const Contact = () => {
                       <input
                         type="text"
                         id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        required
                         className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                         placeholder="Doe"
                       />
@@ -148,6 +199,10 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                       placeholder="john@example.com"
                     />
@@ -160,6 +215,9 @@ const Contact = () => {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                       placeholder="+92 300 1234567"
                     />
@@ -171,15 +229,18 @@ const Contact = () => {
                     </label>
                     <select
                       id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                     >
-                      <option>Select a service...</option>
-                      <option>PSX Account Opening</option>
-                      <option>Investment Packages</option>
-                      <option>Portfolio Review</option>
-                      <option>Stock Research & Picks</option>
-                      <option>Educational Sessions</option>
-                      <option>Premium Advisory</option>
+                      <option value="">Select a service...</option>
+                      <option value="PSX Account Opening">PSX Account Opening</option>
+                      <option value="Investment Packages">Investment Packages</option>
+                      <option value="Portfolio Review">Portfolio Review</option>
+                      <option value="Stock Research & Picks">Stock Research & Picks</option>
+                      <option value="Educational Sessions">Educational Sessions</option>
+                      <option value="Premium Advisory">Premium Advisory</option>
                     </select>
                   </div>
 
@@ -189,6 +250,9 @@ const Contact = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       rows={4}
                       className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
                       placeholder="Tell us about your investment goals and how we can help you..."
