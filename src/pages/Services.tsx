@@ -72,8 +72,10 @@ I would like to know more about this service and how to get started.`;
             <p className="text-xl text-muted-foreground mb-8">
               Comprehensive solutions for your stock market investment journey in Pakistan
             </p>
-            <Button size="lg" className="mr-4">
-              Get Started Today
+            <Button size="lg" className="mr-4" asChild>
+              <a href="https://wa.me/923181300262?text=Hi! I want to get started with your investment services. Please guide me." target="_blank" rel="noopener noreferrer">
+                Get Started Today
+              </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://wa.me/923181300262?text=Hi! I'd like to learn more about your investment services." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
@@ -180,8 +182,10 @@ I would like to know more about this service and how to get started.`;
             Join hundreds of successful investors who trust us with their financial future
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button variant="secondary" size="lg">
-              Start Your Journey
+            <Button variant="secondary" size="lg" asChild>
+              <a href="https://wa.me/923181300262?text=Hi! I'm ready to start my investment journey. Please help me get started." target="_blank" rel="noopener noreferrer">
+                Start Your Journey
+              </a>
             </Button>
             <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
               <a href="https://wa.me/923181300262?text=Hi! I'm interested in your investment services and would like to get started." target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2">
