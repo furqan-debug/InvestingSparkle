@@ -2,6 +2,6 @@ deployment:
   tasks:
     - npm install
     - npm run build
-    - export DEPLOYPATH=/home/investingsparkle/public_html
+    - export DEPLOYPATH=/home/repositories/InvestingSparkle
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -r dist/* $DEPLOYPATH/
