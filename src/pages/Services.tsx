@@ -9,42 +9,40 @@ const Services = () => {
     title: "PSX Account Opening",
     description: "Complete assistance in opening your Pakistan Stock Exchange trading account with verified brokers.",
     price: "PKR 2,400",
+    subtext: "(Fixed — Setup Only)",
     features: ["Broker comparison and selection", "Documentation assistance", "Account verification support", "Initial setup guidance"],
     icon: Users,
     popular: false
   }, {
     title: "Investment Packages",
     description: "Curated investment portfolios designed for different risk appetites and financial goals.",
-    price: "Starting from PKR 50,000",
-    features: ["Diversified stock selection", "Risk-adjusted portfolios", "Monthly performance reports", "Rebalancing recommendations"],
+    price: "One-Time Fee % of Capital",
+    subtext: "Up to 5 lac: 5% • 5-20 lac: 3% • Above 20 lac: 2%",
+    features: ["Diversified stock selection", "Risk-adjusted allocation", "1-month performance check"],
     icon: BarChart3,
     popular: true
   }, {
     title: "Portfolio Review",
     description: "Comprehensive analysis of your existing investments with actionable recommendations.",
-    price: "PKR 5,000",
-    features: ["Complete portfolio analysis", "Risk assessment", "Performance evaluation", "Strategic recommendations"],
+    price: "1% of Portfolio Value",
+    subtext: "(Minimum PKR 5,000)",
+    features: ["Full analysis & risk assessment", "Exit/rebalance recommendations"],
     icon: TrendingUp,
     popular: false
   }, {
-    title: "Stock Research & Picks",
-    description: "Weekly stock recommendations based on fundamental and technical analysis.",
-    price: "PKR 15,000/month",
-    features: ["Weekly stock picks", "Detailed analysis reports", "Entry and exit strategies", "Risk management guidelines"],
+    title: "Monthly Stock Research & Picks",
+    description: "Monthly subscription service with weekly stock recommendations and market insights.",
+    price: "Subscription % of Portfolio",
+    subtext: "Below 5 lac: 0.8%/month • 5-20 lac: 0.5%/month • Above 20 lac: 0.3%/month",
+    features: ["Weekly picks & entry/exit calls", "Market trend alerts"],
     icon: BookOpen,
     popular: false
   }, {
-    title: "Educational Sessions",
-    description: "Learn the fundamentals of stock market investing through structured sessions.",
-    price: "PKR 25,000",
-    features: ["Market fundamentals training", "Technical analysis basics", "Risk management strategies", "Live trading demonstrations"],
-    icon: HeadphonesIcon,
-    popular: false
-  }, {
     title: "Premium Advisory",
-    description: "Comprehensive investment advisory service with dedicated support.",
-    price: "PKR 50,000/month",
-    features: ["Personalized investment strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority market updates"],
+    description: "Comprehensive ongoing investment advisory service with dedicated high-touch support.",
+    price: "Annual % (Charged Monthly)",
+    subtext: "Up to 20 lac: 3% annually • Above 20 lac: 2% annually",
+    features: ["Personalised strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority alerts"],
     icon: Shield,
     popular: false
   }];
@@ -113,6 +111,7 @@ I would like to know more about this service and how to get started.`;
                   
                   <div className="mb-4">
                     <p className="text-2xl font-bold text-primary">{service.price}</p>
+                    {service.subtext && <p className="text-sm text-muted-foreground mt-1">{service.subtext}</p>}
                   </div>
                   
                   <ul className="space-y-2 mb-6">
