@@ -50,7 +50,7 @@ const Services = () => {
     description: "Comprehensive online investment education with live sessions and lifetime access to recordings.",
     price: "PKR 29,999",
     subtext: "(Live Zoom + Recording Access for 6 Months)",
-    features: ["Live Zoom sessions", "6 months recording access", "Interactive Q&A sessions", "Comprehensive curriculum"],
+    features: ["Live Zoom sessions", "Recording provided of zoom lectures", "Materials provided for learning", "Interactive Q&A sessions"],
     icon: HeadphonesIcon,
     popular: false
   }, {
