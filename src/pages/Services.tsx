@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Shield, TrendingUp, Users, MessageCircle, BarChart3, BookOpen, HeadphonesIcon } from "lucide-react";
+import { CheckCircle, Shield, TrendingUp, Users, MessageCircle, BarChart3, BookOpen, HeadphonesIcon, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 import InteractiveCard from "@/components/InteractiveCard";
 const Services = () => {
   const services = [{
@@ -126,6 +127,30 @@ I would like to know more about this service and how to get started.`;
                   </Button>
                 </div>
               </InteractiveCard>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Terms and Conditions Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="bg-background border rounded-lg p-8 shadow-sm">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FileText className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Terms and Conditions</h2>
+              <p className="text-muted-foreground mb-6">
+                Please read our terms and conditions carefully before using our services. 
+                Understanding our policies helps ensure a transparent and responsible investment experience.
+              </p>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                <Link to="/terms" className="inline-flex items-center space-x-2">
+                  <FileText className="h-4 w-4" />
+                  <span>View Terms & Conditions</span>
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
