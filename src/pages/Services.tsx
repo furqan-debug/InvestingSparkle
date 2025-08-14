@@ -45,6 +45,22 @@ const Services = () => {
     features: ["Personalised strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority alerts"],
     icon: Shield,
     popular: false
+  }, {
+    title: "Online Training Course",
+    description: "Comprehensive online investment education with live sessions and lifetime access to recordings.",
+    price: "PKR 29,999",
+    subtext: "(Live Zoom + Recording Access for 6 Months)",
+    features: ["Live Zoom sessions", "6 months recording access", "Interactive Q&A sessions", "Comprehensive curriculum"],
+    icon: HeadphonesIcon,
+    popular: false
+  }, {
+    title: "Physical Training (Karachi)",
+    description: "Face-to-face mentorship program with hands-on trading practice and comprehensive materials.",
+    price: "PKR 94,999",
+    subtext: "(Face-to-face mentorship, printed materials, refreshments, and direct trading practice)",
+    features: ["Face-to-face mentorship", "Printed materials included", "Refreshments provided", "Direct trading practice"],
+    icon: Users,
+    popular: false
   }];
   const handleServiceSelect = (service: typeof services[0]) => {
     const message = `Hi! I'm interested in your "${service.title}" service.
