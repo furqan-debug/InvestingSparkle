@@ -17,7 +17,7 @@ const Services = () => {
     title: "Investment Packages",
     description: "Curated investment portfolios designed for different risk appetites and financial goals.",
     price: "One-Time Fee % of Capital",
-    subtext: "Up to 5 lac: 5% • 5-20 lac: 3% • Above 20 lac: 2%",
+    subtext: "Up to ₨5 Lakh: 5% | ₨5-20 Lakh: 3% | Above ₨20 Lakh: 2%",
     features: ["Diversified stock selection", "Risk-adjusted allocation", "1-month performance check"],
     icon: BarChart3,
     popular: true
@@ -41,7 +41,7 @@ const Services = () => {
     title: "Premium Advisory",
     description: "Comprehensive ongoing investment advisory service with dedicated high-touch support.",
     price: "Annual % (Charged Monthly)",
-    subtext: "Up to 20 lac: 3% annually • Above 20 lac: 2% annually",
+    subtext: "Up to ₨20 Lakh: 3% annually | Above ₨20 Lakh: 2% annually",
     features: ["Personalised strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority alerts"],
     icon: Shield,
     popular: false
