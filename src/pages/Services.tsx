@@ -16,8 +16,8 @@ const Services = () => {
   }, {
     title: "Investment Packages",
     description: "Curated investment portfolios designed for different risk appetites and financial goals.",
-    price: "One-Time Fee % of Capital",
-    subtext: "Up to ₨5 Lakh: 5% | ₨5-20 Lakh: 3% | Above ₨20 Lakh: 2%",
+    price: "One-Time Fee",
+    subtext: "percentage_of_capital",
     features: ["Diversified stock selection", "Risk-adjusted allocation", "1-month performance check"],
     icon: BarChart3,
     popular: true
@@ -32,16 +32,16 @@ const Services = () => {
   }, {
     title: "Monthly Stock Research & Picks",
     description: "Monthly subscription service with weekly stock recommendations and market insights.",
-    price: "Subscription % of Portfolio",
-    subtext: "Below 5 lac: 0.8%/month • 5-20 lac: 0.5%/month • Above 20 lac: 0.3%/month",
+    price: "Monthly Subscription",
+    subtext: "percentage_of_portfolio",
     features: ["Weekly picks & entry/exit calls", "Market trend alerts"],
     icon: BookOpen,
     popular: false
   }, {
     title: "Premium Advisory",
     description: "Comprehensive ongoing investment advisory service with dedicated high-touch support.",
-    price: "Annual % (Charged Monthly)",
-    subtext: "Up to ₨20 Lakh: 3% annually | Above ₨20 Lakh: 2% annually",
+    price: "Annual Fee (Monthly Billing)",
+    subtext: "percentage_annually",
     features: ["Personalised strategy", "Direct WhatsApp support", "Weekly portfolio reviews", "Priority alerts"],
     icon: Shield,
     popular: false
@@ -127,7 +127,52 @@ I would like to know more about this service and how to get started.`;
                   
                   <div className="mb-4">
                     <p className="text-2xl font-bold text-primary">{service.price}</p>
-                    {service.subtext && <p className="text-sm text-muted-foreground mt-1">{service.subtext}</p>}
+                    {service.subtext && (
+                      service.subtext === "percentage_of_capital" ? (
+                        <div className="mt-3 space-y-2">
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Up to ₨5 Lakh</span>
+                            <span className="text-sm font-bold text-primary">5%</span>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">₨5-20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">3%</span>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Above ₨20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">2%</span>
+                          </div>
+                        </div>
+                      ) : service.subtext === "percentage_of_portfolio" ? (
+                        <div className="mt-3 space-y-2">
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Below ₨5 Lakh</span>
+                            <span className="text-sm font-bold text-primary">0.8%/month</span>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">₨5-20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">0.5%/month</span>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Above ₨20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">0.3%/month</span>
+                          </div>
+                        </div>
+                      ) : service.subtext === "percentage_annually" ? (
+                        <div className="mt-3 space-y-2">
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Up to ₨20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">3% annually</span>
+                          </div>
+                          <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                            <span className="text-sm font-medium">Above ₨20 Lakh</span>
+                            <span className="text-sm font-bold text-primary">2% annually</span>
+                          </div>
+                        </div>
+                      ) : (
+                        <p className="text-sm text-muted-foreground mt-1">{service.subtext}</p>
+                      )
+                    )}
                   </div>
                   
                   <ul className="space-y-2 mb-6">
