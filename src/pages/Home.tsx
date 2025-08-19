@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Shield, Users, MessageCircle, CheckCircle, ArrowRight, Building, Award, Clock, Star, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import StockTicker from "@/components/StockTicker";
-import InvestmentCalculator from "@/components/InvestmentCalculator";
+import CalculatorTabs from "@/components/CalculatorTabs";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import PakistaniTicker from "@/components/PakistaniTicker";
 import InteractiveCard from "@/components/InteractiveCard";
@@ -133,16 +133,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Investment Calculator Section */}
+      {/* Financial Calculators Section */}
       <section className="py-20 bg-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-foreground">Investment Growth Calculator</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Estimate your potential returns with our professional investment calculator
-            </p>
-          </div>
-          <InvestmentCalculator />
+          <CalculatorTabs />
         </div>
       </section>
 
