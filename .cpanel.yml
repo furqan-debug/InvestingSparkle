@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/investingsparkle/public_html
+    - export DEPLOYPATH=/home/investingsparkle/public_html/InvestingSparkle
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -r dist/* $DEPLOYPATH/
